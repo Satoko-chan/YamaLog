@@ -1,0 +1,50 @@
+<div class="main posts-new-container">
+  <div class="container">
+
+    <%= form_tag("/posts/create",{multipart:true}) do %>
+    <div class="new-top">
+
+      <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+      <% end %>
+
+      <div class="top left">
+        <% if params[:image] %>
+          <img src="<%= "/work_images/#{post.image_name}" %>">
+        <% else %>
+          <img src="/work_images/work_default.jpg">
+        <% end %>
+      </div>
+      <div class="top right">
+        <div class="content">
+          <p>イメージ写真</p>
+          <input type="file" name="image" value="ファイルを選択">
+        </div>
+        <div class="content">
+          <p>タイトル</p>
+          <input type="text" name="title" value="<%=@post.title%>">
+        </div>
+        <div class="content">
+          <p>ジャンル</p>
+          <input type="select" name="genre" value="ジャンルを選択">
+        </div>
+      </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="valuation_item">
+
+    </div>
+    <div class="comment">
+      <p>コメント</p>
+      <textarea name="comment" rows="8" cols="80"><%=@post.comment%></textarea>
+    </div>
+    <div class="create-btn">
+      <input class="btn" type="submit" value="投稿する">
+    </div>
+    <% end %>
+
+  </div>
+</div>

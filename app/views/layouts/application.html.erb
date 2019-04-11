@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EntameLog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+
+
+    <header>
+         <div class="header-logo">
+           <% if @current_user %>
+             <%= link_to("EntameLog", "/posts/index") %>
+           <% else %>
+             <%= link_to("EntameLog", "/") %>
+           <% end %>
+         </div>
+         <ul class="header-menus">
+           <% if  @current_user%>
+             <li>
+               <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+             </li>
+             <li>
+               <%= link_to("投稿一覧", "/posts/index") %>
+             </li>
+             <li>
+               <%= link_to("新規投稿", "/posts/new") %>
+             </li>
+             <li>
+               <%= link_to("友達", "/users/index") %>
+             </li>
+             <li>
+               <%= link_to("ログアウト", "/logout", {method: :post}) %>
+             </li>
+           <% else %>
+             <li>
+               <%= link_to("EntameLogとは", "/about") %>
+             </li>
+             <li>
+               <%= link_to("新規登録", "/signup") %>
+             </li>
+             <li>
+               <%= link_to("ログイン", "/login") %>
+             </li>
+           <% end %>
+         </ul>
+       </header>
+
+       <% if flash[:notice] %>
+         <div class="flash">
+           <%= flash[:notice] %>
+         </div>
+       <% end %>
+
+    <%= yield %>
+  </body>
+</html>
