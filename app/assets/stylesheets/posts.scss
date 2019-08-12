@@ -10,55 +10,76 @@
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
-}
 
-.post-left img {
-  width: 50px;
-  height: 50px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  object-fit: cover;
-}
-
-.post-left {
-  float: left;
-  width: 10%;
+  .post-left img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #c1ced7;
+    margin-bottom: 10px;
+    object-fit: cover;
+    float: left;
+  }
 }
 
 .post-right {
+  padding-left:100px;
+  font-size: 20px;
+  li{
+    color: black;
+  }
+}
+
+i{
   float: left;
-  width: 90%;
-  padding-left: 25px;
-  text-align: left;
+  padding-right: 10px;
 }
 
 
+
 /* posts/new ================================ */
-.new-top{
-  .top{
-    float:left;
-    padding-top: 20px;
-    img{
-      width: 280px;
-      height: 100%;
-      border-radius: 5%;
-      box-shadow: 0 2px 6px #c1ced7;
-      object-fit: cover;
-      margin-right: 35px;
+.posts-new-container{
+  text-align: center;
+  .new-top{
+    .top{
+      float:left;
+      padding-top: 20px;
+      width: 50%;
+      img{
+        width: 280px;
+        height: 100%;
+        border-radius: 5%;
+        box-shadow: 0 2px 6px #c1ced7;
+        object-fit: cover;
+        margin-right: 35px;
+      }
+      .content{
+        padding-bottom: 20px;
+      }
     }
-    .content{
-      padding-bottom: 20px;
+  }
+
+  .clear{
+    clear: left;
+  }
+
+  .comment{
+    margin: 10px;
+    textarea{
+      margin-left: 0 auto;
+    }
+  }
+  .create-btn{
+    input{
+      margin: auto;
     }
   }
 }
 
-.clear{
-  clear: left;
-}
 
-.comment{
-  margin-top: 50px;
-}
+
+
+
 
 .post-menus{
   text-align: right;
@@ -80,13 +101,36 @@
   }
 }
 
+.like-btn{
+  color:#8899a6;
+}
+
+.like-btn-unlike{
+  color:#ff2581;
+}
+
+.posts-show-item .fa {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
 /* posts/new ================================ */
 .create-btn{
   .btn{
+    display: block;
     font-size: 20px;
     padding: 10px;
-    min-height: 140px;
+    min-height: 50px;
     border: 1px solid rgb(216, 218, 223);
+    box-shadow: 0 3px #A9A9A9;
     resize: none;
+    &:hover{
+      background-color: #A9A9A9;
+    }
+    &:active{
+      position: relative;
+      top: 3px;
+      box-shadow: none;
+    }
   }
 }

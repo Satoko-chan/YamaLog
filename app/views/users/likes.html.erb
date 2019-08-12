@@ -1,8 +1,10 @@
-<div class="main users_show_container">
+<div class="main users_likes_container">
   <div class="container">
 
     <div class="user left">
       <img src="<%= "/user_images/#{@user.image_name}" %>">
+      <h2><%= @user.name%></h2>
+      <p><%= @user.email%></p>
       <%if @current_user.id==@user.id%>
       <div class="user-menus">
         <%=link_to("Edit","/users/#{@user.id}/edit")%>
@@ -11,49 +13,27 @@
     </div>
 
     <div class="user right">
-      <h2><%= @user.name%></h2>
-      <p><%= @user.email%></p>
-
-      <div class="clear"></div>
-      <div class="likes">
-        <li>
-        <span class="fa fa-heart"></span>
-        love movies
-        </li>
-        <li>
-        <span class="fa fa-heart"></span>
-        action
-        </li>
-        <li>
-        <span class="fa fa-heart"></span>
-        Woody Allen
-        </li>
-      </div>
-      <div class="about">
-        <h4>About</h4>
-          <p>
-            自己紹介！！！
-            hello
-          </p>
-      </div>
+      自己紹介！！！
+      hello
     </div>
 
     <div class="clear"></div>
 
     <ul class="user-tabs">
-      <li class="active">
+      <li>
         <%= link_to("/users/#{@user.id}") do%>
         Post<i class="fas fa-pencil-alt"></i>
         <%end%>
       </li>
-      <li>
+      <li class="active">
         <%= link_to("/users/#{@user.id}/likes") do%>
         Like<i class="fas fa-heart"></i>
         <%end%>
       </li>
     </ul>
 
-    <% @user.posts.each do |post|%>
+    <% @likes.each do |like|%>
+    <% post=Post.find_by(id: like.post_id)%>
     <div class="posts-index-item">
       <div class="post-left">
         <img src="<%= "/user_images/#{post.user.image_name}" %>">

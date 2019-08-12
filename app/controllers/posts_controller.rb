@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action:authenticate_user
+  before_action:ensure_correct_user, {only:[:edit, :update, :destroy]}
 
   def index
     @posts=Post.all.order(created_at: :desc)
@@ -8,6 +9,7 @@ class PostsController < ApplicationController
   def show
     @post=Post.find_by(id: params[:id])
     @user=@post.user
+    @likes_count=Like.where(post_id: @post.id).count
   end
 
   def new
@@ -18,14 +20,15 @@ class PostsController < ApplicationController
     @post=Post.new(
       title: params[:title],
       comment: params[:comment],
-      user_id:@current_user.id,
-      image_name:"work_default.jpg"
+      user_id: @current_user.id
     )
 
     if params[:image]
+      image= params[:image]
       @post.image_name="#{@post.id}.jpg"
-      image=params[:image]
       File.binwrite("public/work_images/#{@post.image_name}", image.read)
+    else
+      @post.image_name="work_default.jpg"
     end
 
     if @post.save
@@ -38,6 +41,11 @@ class PostsController < ApplicationController
 
   def edit
     @post=Post.find_by(id: params[:id])
+    if params[:image]
+      @post.image_name="#{@post.id}.jpg"
+      image= params[:image]
+      File.binwrite("public/work_images/#{@post.image_name}", image.read)
+    end
   end
 
   def update
@@ -57,5 +65,13 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:notice]="投稿を削除しました"
     redirect_to("/posts/index")
+  end
+
+  def ensure_correct_user
+    @post=Post.find_by(id: params[:id])
+    if @post.user_id != @current_user.id
+      flash[:notice]="権限がありません"
+      redirect_to("/posts/index")
+    end
   end
 end

@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       password: params[:password],
-      image_name:"user_default.png"
+      image_name: "user_default.png"
     )
     if @user.save
       session[:user_id]=@user.id
@@ -58,11 +58,8 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user=User.find_by(
-      email: params[:email],
-      password: params[:password]
-    )
-    if @user
+    @user=User.find_by(email:params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id]=@user.id
       flash[:notice]="ログインしました"
       redirect_to("/posts/index")
@@ -74,10 +71,17 @@ class UsersController < ApplicationController
     end
   end
 
+
   def logout
     session[:user_id]=nil
     flash[:notice]="ログアウトしました"
     redirect_to("/login")
+  end
+
+  def likes
+    @user=User.find_by(id: params[:id])
+    @likes=Like.where(user_id: @user.id)
+
   end
 
 end

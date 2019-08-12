@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/login" => "users#login_form"
   post "/login" => "users#login"
   post "/logout" => "users#logout"
+  get "users/:id/likes" => "users#likes"
 
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
@@ -17,6 +18,10 @@ Rails.application.routes.draw do
   post "posts/:id/destroy" => "posts#destroy"
   get 'posts/index' => "posts#index"
   get "posts/:id" => "posts#show"
+
+  post "likes/:post_id/create" => "likes#create"
+  post "likes/:post_id/destroy" => "likes#destroy"
+
 
 
   get "/" => "home#top"

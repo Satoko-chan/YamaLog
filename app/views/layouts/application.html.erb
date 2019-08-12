@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/9a3706d72e.js"></script>
   </head>
 
   <body>
@@ -27,26 +27,26 @@
                <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
              </li>
              <li>
-               <%= link_to("投稿一覧", "/posts/index") %>
+               <%= link_to("All posts", "/posts/index") %>
              </li>
              <li>
-               <%= link_to("新規投稿", "/posts/new") %>
+               <%= link_to("Friends", "/users/index") %>
              </li>
              <li>
-               <%= link_to("友達", "/users/index") %>
+               <%= link_to("New post", "/posts/new") %>
              </li>
              <li>
-               <%= link_to("ログアウト", "/logout", {method: :post}) %>
+               <%= link_to("Sign out", "/logout", {method: :post}) %>
              </li>
            <% else %>
              <li>
-               <%= link_to("EntameLogとは", "/about") %>
+               <%= link_to("What's EntameLog?", "/about") %>
              </li>
              <li>
-               <%= link_to("新規登録", "/signup") %>
+               <%= link_to("Sign in", "/signup") %>
              </li>
              <li>
-               <%= link_to("ログイン", "/login") %>
+               <%= link_to("Log in", "/login") %>
              </li>
            <% end %>
          </ul>

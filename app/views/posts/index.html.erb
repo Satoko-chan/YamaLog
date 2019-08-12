@@ -10,16 +10,55 @@
           <%end%>
         </div>
         <div class="post-right">
-          <div class="post-image">
+          <!-- <div class="post-image">
             <%if post.user_id.present?%>
               <img src="<%= "/work_images/#{post.image_name}" %>">
             <%end%>
-          </div>
-          <%if post.user_id.present?%>
-            <%= link_to(post.user.name, "/users/#{post.user.id}")%>
-          <%end%>
-          <%= link_to(post.title, "/posts/#{post.id}") %>
+          </div> -->
+          <ul>
+            <li class="user_name">
+              <%if post.user_id.present?%>
+                <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+              <%end%>
+            </li>
+            <i class="far fa-clock"></i>
+            <li class="created_at"><font size="-1">
+              <%= post.created_at %>
+            </font></li>
+          </ul>
         </div>
+        <ul>
+          <li class="post_title"><font size="5">
+            <%= link_to(post.title, "/posts/#{post.id}") %>
+          </font></li>
+          <li class="post_comment">
+            <%= post.comment %>
+          </li>
+
+          <div class="like_and_star">
+            <div>⭐️⭐️⭐️⭐️</div>
+            <div>
+              <%if Like.find_by(user_id: @current_user.id, post_id: post.id)%>
+                <%= link_to("/likes/#{post.id}/destroy", {method: "post"})do %>
+                <span class="fa fa-heart like-btn-unlike"></span>
+                <%end%>
+              <%else%>
+                <%= link_to("/likes/#{post.id}/create", {method: "post"}) do%>
+                <span class="fa fa-heart like-btn"></span>
+                <%end%>
+              <%end%>
+              <%= @likes_count=Like.where(post_id: post.id).count%>
+            </div>
+
+            <%if post.user_id== @current_user.id%>
+            <div class="post-menus">
+                <%=link_to("Edit","/posts/#{post.id}/edit")%>
+                <%= link_to("Delete", "/posts/#{post.id}/destroy", {method:"post"}) %>
+            </div>
+            <%end%>
+          </div>        
+        </ul>
+
       </div>
       <% end %>
 
