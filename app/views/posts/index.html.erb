@@ -2,11 +2,12 @@
 
   <div class="container">
 
-      <% @posts.each do |post| %>
-      <div class="posts-index-item">
+    <% @posts.each do |post| %>
+    <div class="posts-index-item">
+      <div class="posts-index-item-top">
         <div class="post-left">
           <%if post.user_id.present?%>
-            <img src="<%="/user_images/#{post.user.image_name}"%>">
+          <img src="<%="/user_images/#{post.user.image_name}"%>">
           <%end%>
         </div>
         <div class="post-right">
@@ -18,50 +19,58 @@
           <ul>
             <li class="user_name">
               <%if post.user_id.present?%>
-                <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+              <%= link_to(post.user.name, "/users/#{post.user.id}")%>
               <%end%>
             </li>
-            <i class="far fa-clock"></i>
-            <li class="created_at"><font size="-1">
-              <%= post.created_at.strftime('%Y/%m/%d') %>
-            </font></li>
+            <div class="created_at">
+              <i class="far fa-clock"></i>
+              <font size="-1">
+                <%= post.created_at.strftime('%Y/%m/%d') %>
+              </font>
+            </div>
           </ul>
         </div>
-        <ul>
-          <li class="post_title"><font size="5">
-            <%= link_to(post.title, "/posts/#{post.id}") %>
-          </font></li>
+      </div>
+
+      <div class="posts-index-item-content">
+        <div class="posts_title_comment">
+          <li class="post_title" style="margin-left: 20px;">
+            <font size="5">
+              <%= link_to(post.title, "/posts/#{post.id}") %>
+            </font>
+          </li>
           <li class="post_comment">
             <%= post.comment %>
           </li>
+        </div>
 
-          <div class="like_and_star">
-            <div>⭐️⭐️⭐️⭐️</div>
-            <div>
-              <%if Like.find_by(user_id: @current_user.id, post_id: post.id)%>
-                <%= link_to("/likes/#{post.id}/destroy", {method: "post"})do %>
-                <span class="fa fa-heart like-btn-unlike"></span>
-                <%end%>
-              <%else%>
-                <%= link_to("/likes/#{post.id}/create", {method: "post"}) do%>
-                <span class="fa fa-heart like-btn"></span>
-                <%end%>
-              <%end%>
-              <%= @likes_count=Like.where(post_id: post.id).count%>
-            </div>
-
-            <%if post.user_id== @current_user.id%>
-            <div class="post-menus">
-                <%=link_to("Edit","/posts/#{post.id}/edit")%>
-                <%= link_to("Delete", "/posts/#{post.id}/destroy", {method:"post"}) %>
-            </div>
+        <div class="like_and_star">
+          <div>⭐️⭐️⭐️⭐️</div>
+          <div>
+            <%if Like.find_by(user_id: @current_user.id, post_id: post.id)%>
+            <%= link_to("/likes/#{post.id}/destroy", {method: "post"})do %>
+            <span class="fa fa-heart like-btn-unlike"></span>
             <%end%>
-          </div>        
-        </ul>
+            <%else%>
+            <%= link_to("/likes/#{post.id}/create", {method: "post"}) do%>
+            <span class="fa fa-heart like-btn"></span>
+            <%end%>
+            <%end%>
+            <%= @likes_count=Like.where(post_id: post.id).count%>
+          </div>
 
+          <%if post.user_id== @current_user.id%>
+          <div class="post-menus">
+            <%=link_to("Edit","/posts/#{post.id}/edit")%>
+            <%= link_to("Delete", "/posts/#{post.id}/destroy", {method:"post"}) %>
+          </div>
+          <%end%>
+        </div>
       </div>
-      <% end %>
-    
+
+    </div>
+    <% end %>
+
   </div>
 
 </div>

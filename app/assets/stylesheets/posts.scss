@@ -4,6 +4,10 @@
 
 /* posts/index ================================ */
 
+.posts-index-item-top {
+  display: flex;
+}
+
 .posts-index-item {
   padding: 20px 30px;
   background-color: white;
@@ -11,29 +15,42 @@
   box-shadow: 0 2px 6px #c1ced7;
 
   .post-left img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     box-shadow: 0 2px 6px #c1ced7;
-    margin-bottom: 10px;
+    margin: 10px;
     object-fit: cover;
-    float: left;
+    // float: left;
   }
 }
 
 .post-right {
-  padding-left: 100px;
-  font-size: 20px;
+  .user_name {
+    font-size: 18px;
+  }
+  
+  .created_at {
+    i {
+      // float: left;
+      line-height: 25px;
+      margin-right: 10px;
+    //   padding-right: 10px;
+    }
+  }
+  
+}
 
-  li {
-    color: black;
+.posts-index-item-content {
+  display: flex;
+
+  .like_and_star {
+    margin-left: auto;
+    align-self: flex-end;
+    text-align: right;
   }
 }
 
-i {
-  float: left;
-  padding-right: 10px;
-}
 
 /* posts/new ================================ */
 .posts-new-container {
