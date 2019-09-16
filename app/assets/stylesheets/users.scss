@@ -159,5 +159,14 @@
     font-family: "Bradley Hand";
     text-align: center;
   }
+
+  .user-like-input {
+    display: flex;
+    span {
+      // line-height: 35px;
+      margin: 0 20px;
+      line-height: 35px;
+    }
+  }
 }
 

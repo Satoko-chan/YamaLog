@@ -18,6 +18,21 @@
         <input type="file" name="image">
         <p>Email:</p>
         <input name="email" value="<%=@user.email%>">
+        <p>What you like:</p>
+        <li class="user-like-input">
+            <span class="fa fa-heart"></span>
+            <input name="user-like1" value="" placeholder="ex) Love Movies">
+        </li>
+        <li class="user-like-input">
+            <span class="fa fa-heart"></span>
+            <input name="user-like2" value="" placeholder="ex) Classic">
+        </li>
+        <li class="user-like-input">
+            <span class="fa fa-heart"></span>
+            <input name="user-like3" value="" placeholder="ex) Woody Allen">
+        </li>
+        <p>About you:</p>
+        <textarea name="" id="" rows="5" placeholder="Introduce about your self briefly :)"></textarea>
         
         <input type="submit" value="編集する">
 
