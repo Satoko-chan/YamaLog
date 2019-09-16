@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 /* posts/index ================================ */
 
 .posts-index-item {
@@ -23,67 +22,90 @@
 }
 
 .post-right {
-  padding-left:100px;
+  padding-left: 100px;
   font-size: 20px;
-  li{
+
+  li {
     color: black;
   }
 }
 
-i{
+i {
   float: left;
   padding-right: 10px;
 }
 
-
-
 /* posts/new ================================ */
-.posts-new-container{
-  text-align: center;
-  .new-top{
-    .top{
-      float:left;
-      padding-top: 20px;
+.posts-new-container {
+  .posts-new-heading {
+    font-weight: 300;
+    font-size: 48px;
+    color: #bcc8d4;
+    font-family: "Bradley Hand";
+    text-align: center;
+  }
+  .new-top {
+    .posts-new-contents {
+      margin: 5% auto;
+      // padding-top: 20px;
       width: 50%;
-      img{
-        width: 280px;
-        height: 100%;
-        border-radius: 5%;
-        box-shadow: 0 2px 6px #c1ced7;
-        object-fit: cover;
-        margin-right: 35px;
-      }
-      .content{
+      // img{
+      //   width: 280px;
+      //   height: 100%;
+      //   border-radius: 5%;
+      //   box-shadow: 0 2px 6px #c1ced7;
+      //   object-fit: cover;
+      //   margin-right: 35px;
+      // }
+      .content {
+        display: flex;
+        justify-content: space-evenly;
         padding-bottom: 20px;
       }
     }
   }
 
-  .clear{
+  .clear {
     clear: left;
   }
 
-  .comment{
+  .comment {
     margin: 10px;
-    textarea{
-      margin-left: 0 auto;
+    textarea {
+      margin: 0 auto;
+      width: 80%;
     }
   }
-  .create-btn{
-    input{
-      margin: auto;
+  .create-btn {
+    .btn {
+      display: block;
+      margin: 2% auto;
+      font-size: 20px;
+      padding: 10px;
+      min-height: 50px;
+      // border: 1px solid rgb(216, 218, 223);
+      background-color: #a9a9a9;
+      box-shadow: 0 3px rgb(117, 117, 117);
+      opacity: 0.8;
+      resize: none;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+      &:active {
+        position: relative;
+        top: 6px;
+        box-shadow: none;
+        user-select: none;
+      }
     }
   }
 }
 
-
-
-
-
-
-.post-menus{
+.post-menus {
   text-align: right;
-  a, input{
+  a,
+  input {
     color: #8899a6;
     text-decoration: underline;
     font-size: 14px;
@@ -92,14 +114,20 @@ i{
 
 /* posts/show ================================ */
 
-.post-user-name{
-  img{
+.post-user-name {
+  img {
     width: 50px;
     height: 50px;
     border-radius: 40%;
     box-shadow: 0 2px 6px #c1ced7;
     object-fit: cover;
   }
+}
+
+.post-title {
+  font-size: 35px;
+  margin: 1% 15%;
+  font-family: medium-content-title-font, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .posts-show-img img {
@@ -109,8 +137,9 @@ i{
 }
 
 .posts-show-index {
+  margin: 1% 15%;
+  font-family: medium-content-title-font, Georgia, Cambria, "Times New Roman", Times, serif;
   text-align: center;
-  margin: 15px;
 }
 
 .posts-show-comment {
@@ -118,36 +147,15 @@ i{
   margin: 15px;
 }
 
-.like-btn{
-  color:#8899a6;
+.like-btn {
+  color: #8899a6;
 }
 
-.like-btn-unlike{
-  color:#ff2581;
+.like-btn-unlike {
+  color: #ff2581;
 }
 
 .posts-show-item .fa {
   font-size: 16px;
   margin-right: 3px;
-}
-
-/* posts/new ================================ */
-.create-btn{
-  .btn{
-    display: block;
-    font-size: 20px;
-    padding: 10px;
-    min-height: 50px;
-    border: 1px solid rgb(216, 218, 223);
-    box-shadow: 0 3px #A9A9A9;
-    resize: none;
-    &:hover{
-      background-color: #A9A9A9;
-    }
-    &:active{
-      position: relative;
-      top: 3px;
-      box-shadow: none;
-    }
-  }
 }

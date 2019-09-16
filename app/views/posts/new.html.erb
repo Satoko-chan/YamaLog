@@ -1,44 +1,42 @@
 <div class="main posts-new-container">
   <div class="container">
+    <h1 class="posts-new-heading">New Post</h1>
 
-    <%= form_tag("/posts/create",{multipart:true})do%>
+    <%= form_tag("/posts/create", {multipart:true}) do %>
     <div class="new-top">
-        <% @post.errors.full_messages.each do |message| %>
-              <div class="form-error">
-                <%= message %>
-              </div>
-        <% end %>
-
-      <div class="top left">
-
+      <% @post.errors.full_messages.each do |message| %>
+      <div class="form-error">
+        <%= message %>
       </div>
+      <% end %>
 
-      <div class="top right">
+      <!-- <div class="top right"> -->
+      <div class="posts-new-contents">
         <div class="content">
-          <p>Select image</p>
+          <p>Select image: </p>
           <input type="file" name="image" value="Select image">
         </div>
         <div class="content">
-          <p>Title</p>
+          <p>Title: </p>
           <input type="text" name="title" value="<%=@post.title%>">
         </div>
         <div class="content">
-          <p>Genre</p>
+          <p>Genre: </p>
           <input type="select" name="genre" value="Select Genre">
         </div>
         <div class="content">
-          <p>Stars</p>
+          <p>Stars: </p>
           <input type="select" name="star" value="Select Star">
         </div>
       </div>
     </div>
 
-    <div class="clear">
-    </div>
+    <!-- <div class="clear"> -->
+    <!-- </div> -->
 
     <div class="valuation_item">
     </div>
-    <div class="comment">
+    <div class="comment" style="text-align: center;">
       <p>Comment</p>
       <textarea name="comment" rows="8" cols="80"><%=@post.comment%></textarea>
     </div>

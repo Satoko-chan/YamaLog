@@ -9,6 +9,9 @@
 
         <%=link_to(@user.name,"/users/#{@user.id}")%>
       </div>
+      <div class="post-title">
+          <%=@post.title%>
+      </div>
 
       <div class="posts-show-img">
         <img src="<%= "/work_images/#{@post.image_name}"%>">
@@ -17,16 +20,13 @@
       <!-- <div class="top right"> -->
       <div class="posts-show-index">
         <div class="content">
-          <%=@post.title%>
-        </div>
-        <div class="content">
           <p>ジャンル：コメディ</p>
         </div>
         <div class="content">
           <p>総合評価：☆☆☆</p>
         </div>
         <div class="content">
-          <%=@post.updated_at%>
+          <%=@post.updated_at.strftime('%Y/%m/%d')%>
         </div>
       </div>
 
