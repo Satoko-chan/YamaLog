@@ -1,5 +1,7 @@
 <div class="main users_edit_container">
   <div class="container">
+
+    <h1>User Info Edit</h1>
     <%= form_tag("/users/#{@user.id}/update",{multipart:true})do%>
     <div class="form users-form">
       <div class="form-body">
@@ -21,5 +23,6 @@
       </div>
     </div>
     <% end %>
+
   </div>
 </div>

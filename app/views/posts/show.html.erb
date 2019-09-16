@@ -38,8 +38,7 @@
 
     </div>
     <div class="posts-show-comment">
-      <div style="text-align: left;">Comment</div>
-      <textarea name="comment" rows="8" cols="130"><%=@post.comment%></textarea>
+      <%=@post.comment%>
     </div>
 
     <%if @post.user_id== @current_user.id%>

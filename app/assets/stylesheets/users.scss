@@ -3,53 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* users/index ================================ */
-.users-heading {
+.users_index_container {
+  h1 {
   font-weight: 300;
   font-size: 48px;
   color: #bcc8d4;
   font-family: 'Bradley Hand';
   text-align: center;
+  margin: 3% 0;
+  }
 }
 
 .users-index-item {
-  padding: 20px 30px;
+  padding: 3% 10%;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
   display: table;
   width: 100%;
-}
 
-.user-left img {
-  width: 50px;
-  height: 50px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  object-fit: cover;
-}
-
-.user-name a {
-  font-weight: 600;
-}
-
-.user-name a:hover {
-  color: #3ecdc6;
-}
-
-.user-left {
-  float: left;
-  width: 10%;
-}
-
-.user-right {
-  width: 90%;
-  padding-left: 25px;
-  text-align: left;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.users-index-item{
   .user-left img{
     width: 80px;
     height: 80px;
@@ -60,6 +32,22 @@
   }
 }
 
+.user-name a {
+  font-weight: 600;
+}
+
+.user-name a:hover {
+  color: #3ecdc6;
+}
+
+.user-right {
+  width: 60%;
+  right: 0;
+  text-align: left;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 20px;
+}
 
 
 /* users/show ================================ */
@@ -157,3 +145,14 @@
 .users-form input {
   margin-bottom: 15px;
 }
+
+.users_edit_container {
+  h1 {
+    font-weight: 300;
+    font-size: 48px;
+    color: #bcc8d4;
+    font-family: "Bradley Hand";
+    text-align: center;
+  }
+}
+

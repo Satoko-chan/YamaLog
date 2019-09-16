@@ -1,5 +1,6 @@
 <div class="main posts-edit-container">
   <div class="container">
+    <h1>Post Edit</h1>
     <%= form_tag("/posts/#{@post.id}/update", {multipart:true}) do %>
     <div class="new-top">
       <% @post.errors.full_messages.each do |message| %>
@@ -7,9 +8,10 @@
               <%= message %>
             </div>
       <% end %>
-      <div class="top left">
+
+      <!-- <div class="top left">
         <img src="/work_image/default_image.png">
-      </div>
+      </div> -->
       <div class="top right">
         <div class="content">
           <p>イメージ写真</p>
@@ -25,12 +27,10 @@
         </div>
       </div>
     </div>
-    <div class="clear">
-
-    </div>
+    <!-- <div class="clear"> --><!-- </div> -->
     <div class="valuation_item">
-
     </div>
+
     <div class="comment">
       <p>コメント</p>
       <textarea name="comment" rows="8" cols="80"><%=@post.comment%></textarea>
@@ -41,5 +41,4 @@
     <% end %>
 
   </div>
-
 </div>

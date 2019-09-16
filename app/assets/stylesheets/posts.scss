@@ -139,7 +139,7 @@ i {
 .posts-show-index {
   margin: 1% 15%;
   font-family: medium-content-title-font, Georgia, Cambria, "Times New Roman", Times, serif;
-  text-align: center;
+  text-align: left;
 }
 
 .posts-show-comment {
@@ -158,4 +158,44 @@ i {
 .posts-show-item .fa {
   font-size: 16px;
   margin-right: 3px;
+}
+
+/* posts/edit ================================ */
+.posts-edit-container {
+  h1 {
+    font-weight: 300;
+    font-size: 48px;
+    color: #bcc8d4;
+    font-family: "Bradley Hand";
+    text-align: center;
+  }
+
+  .container {
+    width: 60%;
+    text-align: left;
+  }
+
+  .create-btn {
+    .btn {
+      display: block;
+      margin: 2% 0;
+      font-size: 20px;
+      padding: 5px 15px;
+      min-height: 30px;
+      background-color: #a9a9a9;
+      box-shadow: 0 3px rgb(117, 117, 117);
+      opacity: 0.8;
+      resize: none;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+      &:active {
+        position: relative;
+        top: 6px;
+        box-shadow: none;
+        user-select: none;
+      }
+    }
+  }
 }
