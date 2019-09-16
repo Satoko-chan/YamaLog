@@ -34,7 +34,7 @@
 
       <div class="posts-index-item-content">
         <div class="posts_title_comment">
-          <li class="post_title" style="margin-left: 20px;">
+          <li class="post_title">
             <font size="5">
               <%= link_to(post.title, "/posts/#{post.id}") %>
             </font>
@@ -45,8 +45,7 @@
         </div>
 
         <div class="like_and_star">
-          <div>⭐️⭐️⭐️⭐️</div>
-          <div>
+          <div class="like-icon">
             <%if Like.find_by(user_id: @current_user.id, post_id: post.id)%>
             <%= link_to("/likes/#{post.id}/destroy", {method: "post"})do %>
             <span class="fa fa-heart like-btn-unlike"></span>
@@ -56,16 +55,17 @@
             <span class="fa fa-heart like-btn"></span>
             <%end%>
             <%end%>
+          </div>  
+          <div class="like-count">
             <%= @likes_count=Like.where(post_id: post.id).count%>
           </div>
-
+        </div>
           <%if post.user_id== @current_user.id%>
           <div class="post-menus">
             <%=link_to("Edit","/posts/#{post.id}/edit")%>
             <%= link_to("Delete", "/posts/#{post.id}/destroy", {method:"post"}) %>
           </div>
-          <%end%>
-        </div>
+          <%end%>       
       </div>
 
     </div>

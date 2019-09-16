@@ -100,19 +100,14 @@
 
 .right {
   margin: 20px auto;
-
-  .likes {
-    li {
-      display: flex;
-    }
-  }
 }
 
 // .clear {
 //   clear: left;
 // }
 
-.about {
+.about,
+.likes {
   margin-top: 20px;
   p {
     margin-top: 10px;

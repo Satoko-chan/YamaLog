@@ -42,12 +42,18 @@
 }
 
 .posts-index-item-content {
-  display: flex;
+  .post_comment {
+    width: 85%;
+  }
 
   .like_and_star {
+    display: flex;
+    justify-content: flex-end;
     margin-left: auto;
-    align-self: flex-end;
     text-align: right;
+    .like-count {
+      margin-left: 5px;
+    }
   }
 }
 
@@ -65,7 +71,7 @@
     .posts-new-contents {
       margin: 5% auto;
       // padding-top: 20px;
-      width: 50%;
+      width: 80%;
       // img{
       //   width: 280px;
       //   height: 100%;
@@ -75,9 +81,7 @@
       //   margin-right: 35px;
       // }
       .content {
-        display: flex;
-        justify-content: space-evenly;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
 
         .select-stars option {
           .fa-star {
