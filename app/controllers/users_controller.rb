@@ -20,7 +20,9 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       password: params[:password],
-      image_name: "user_default.png"
+      image_name: "user_default.png",
+      user_like: "What I'm interested",
+      aboutUser: "Hello, nice to meet you!"
     )
     if @user.save
       session[:user_id]=@user.id
@@ -39,21 +41,13 @@ class UsersController < ApplicationController
     @user=User.find_by(id: params[:id])
     @user.name= params[:name]
     @user.email= params[:email]
-    @user.like1= params[:like1]
-    @user.like2= params[:like2]
-    @user.like3= params[:like3]
-    # @user.aboutUser= params[:aboutUser]
+    @user.user_like= params[:user_like]
+    @user.aboutUser= params[:aboutUser]
 
     if params[:image]
       @user.image_name="#{@user.id}.jpg"
       image= params[:image]
       File.binwrite("public/user_images/#{@user.image_name}", image.read)
-    end
-
-    if params[:aboutUser]
-      aboutUser= params[:aboutUser]
-    else
-      render plain: "Hello, nice to meet you!"
     end
 
     if @user.save

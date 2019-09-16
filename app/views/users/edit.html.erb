@@ -21,18 +21,10 @@
         <p>What you like:</p>
         <li class="user-like-input">
             <span class="fa fa-heart"></span>
-            <input name="like1" value="<%= @user.like1 %>" placeholder="ex) Love Movies">
-        </li>
-        <li class="user-like-input">
-            <span class="fa fa-heart"></span>
-            <input name="like2" value="<%= @user.like2 %>" placeholder="ex) Classic">
-        </li>
-        <li class="user-like-input">
-            <span class="fa fa-heart"></span>
-            <input name="like3" value="<%= @user.like3 %>" placeholder="ex) Woody Allen">
+            <input name="user_like" value="<%= @user.user_like %>" placeholder="ex) Love Movies, Classic, Woody Allen">
         </li>
         <p>About you:</p>
-        <textarea name="aboutUser" rows="5" value="<%= @user.aboutUser %>" ></textarea>
+        <textarea name="aboutUser" value="<%= @user.aboutUser %>" placeholder="Let's introduce your self"></textarea>
         
         <input type="submit" value="Edit">
 

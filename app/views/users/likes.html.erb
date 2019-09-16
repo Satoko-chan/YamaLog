@@ -14,13 +14,18 @@
 
       <div class="user right">
         <h2><%= @user.name%></h2>
-        <p><%= @user.email%></p>
-        自己紹介！！！
-        hello
+        <div class="likes">
+          <li>
+            <span class="fa fa-heart"></span>
+            <p><%= @user.user_like %></p>
+          </li>
+        </div>
+        <div class="about">
+          <h4>About:</h4>
+          <p><%= @user.aboutUser %></p>
+        </div>
       </div>
     </div>
-
-    <!-- <div class="clear"></div> -->
 
     <ul class="user-tabs">
       <li>

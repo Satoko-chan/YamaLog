@@ -5,12 +5,12 @@
 /* users/index ================================ */
 .users_index_container {
   h1 {
-  font-weight: 300;
-  font-size: 48px;
-  // color: #bcc8d4;
-  font-family: 'Bradley Hand';
-  text-align: center;
-  margin: 3% 0;
+    font-weight: 300;
+    font-size: 48px;
+    // color: #bcc8d4;
+    font-family: "Bradley Hand";
+    text-align: center;
+    margin: 3% 0;
   }
 }
 
@@ -22,7 +22,7 @@
   display: table;
   width: 100%;
 
-  .user-left img{
+  .user-left img {
     width: 80px;
     height: 80px;
     border-radius: 20%;
@@ -60,55 +60,61 @@
   width: 50%;
   float: left;
 
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #c1ced7;
+    margin: 8px 0 10px;
+    object-fit: cover;
+  }
 
-    img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px #c1ced7;
-      margin: 8px 0 10px;
-      object-fit: cover;
-    }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 20px 0;
+  }
 
-    h2 {
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 1.2;
-    }
+  p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
 
-    p {
-      font-size: 13px;
-      margin-bottom: 15px;
-    }
+  a {
+    color: #8899a6;
+    text-decoration: underline;
+    font-weight: 200;
+  }
 
-    a {
-      color: #8899a6;
-      text-decoration: underline;
-      font-weight: 200;
-    }
-
-    span {
-      color: #afb6bf;
-      font-weight: 200;
-      padding: 0 6px 0 8px;
-    }
+  span {
+    color: #afb6bf;
+    font-weight: 200;
+    padding: 0 6px 0 8px;
+  }
 }
 
-.left{
+.left {
   text-align: center;
 }
 
-.right{
+.right {
   margin: 20px auto;
+
+  .likes {
+    li {
+      display: flex;
+    }
+  }
 }
 
-.clear{
-  clear: left;
-}
+// .clear {
+//   clear: left;
+// }
 
-.about{
+.about {
   margin-top: 20px;
-  p{
+  p {
     margin-top: 10px;
   }
 }
@@ -151,7 +157,6 @@
   margin-bottom: 15px;
 }
 
-
 /* users/edit ================================ */
 .users-form input {
   margin-bottom: 15px;
@@ -175,4 +180,3 @@
     }
   }
 }
-

@@ -13,21 +13,10 @@
 
       <div class="user right">
         <h2><%= @user.name%></h2>
-        <p><%= @user.email%></p>
-
-        <!-- <div class="clear"></div> -->
         <div class="likes">
           <li>
             <span class="fa fa-heart"></span>
-            <p><%= @user.like1 %></p>
-          </li>
-          <li>
-            <span class="fa fa-heart"></span>
-            <p><%= @user.like2 %></p>
-          </li>
-          <li>
-            <span class="fa fa-heart"></span>
-            <p><%= @user.like3 %></p>
+            <p><%= @user.user_like %></p>
           </li>
         </div>
         <div class="about">
@@ -36,8 +25,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="clear"></div> -->
 
     <ul class="user-tabs">
       <li class="active">
