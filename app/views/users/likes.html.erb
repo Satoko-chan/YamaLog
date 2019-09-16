@@ -1,23 +1,26 @@
 <div class="main users_likes_container">
   <div class="container">
 
-    <div class="user left">
-      <img src="<%= "/user_images/#{@user.image_name}" %>">
-      <h2><%= @user.name%></h2>
-      <p><%= @user.email%></p>
-      <%if @current_user.id==@user.id%>
-      <div class="user-menus">
-        <%=link_to("Edit","/users/#{@user.id}/edit")%>
+    <div class="users-show-info">
+      <div class="user left">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+
+        <%if @current_user.id==@user.id%>
+        <div class="user-menus">
+          <%=link_to("Edit","/users/#{@user.id}/edit")%>
+        </div>
+        <%end%>
       </div>
-      <%end%>
+
+      <div class="user right">
+        <h2><%= @user.name%></h2>
+        <p><%= @user.email%></p>
+        自己紹介！！！
+        hello
+      </div>
     </div>
 
-    <div class="user right">
-      自己紹介！！！
-      hello
-    </div>
-
-    <div class="clear"></div>
+    <!-- <div class="clear"></div> -->
 
     <ul class="user-tabs">
       <li>

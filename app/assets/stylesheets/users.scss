@@ -62,6 +62,10 @@
 
 
 /* users/show ================================ */
+.users-show-info {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .user {
   margin-bottom: 20px;

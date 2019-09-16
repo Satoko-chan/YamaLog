@@ -91,6 +91,7 @@ i{
 }
 
 /* posts/show ================================ */
+
 .post-user-name{
   img{
     width: 50px;
@@ -99,6 +100,22 @@ i{
     box-shadow: 0 2px 6px #c1ced7;
     object-fit: cover;
   }
+}
+
+.posts-show-img img {
+  width: 60%;
+  display: block;
+  margin: 15px auto;
+}
+
+.posts-show-index {
+  text-align: center;
+  margin: 15px;
+}
+
+.posts-show-comment {
+  text-align: center;
+  margin: 15px;
 }
 
 .like-btn{
