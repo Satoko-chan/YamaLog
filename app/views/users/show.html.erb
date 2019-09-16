@@ -19,23 +19,20 @@
         <div class="likes">
           <li>
             <span class="fa fa-heart"></span>
-            love movies
+            <p><%= @user.like1 %></p>
           </li>
           <li>
             <span class="fa fa-heart"></span>
-            action
+            <p><%= @user.like2 %></p>
           </li>
           <li>
             <span class="fa fa-heart"></span>
-            Woody Allen
+            <p><%= @user.like3 %></p>
           </li>
         </div>
         <div class="about">
-          <h4>About</h4>
-          <p>
-            自己紹介！！！
-            hello
-          </p>
+          <h4>About:</h4>
+          <p><%= @user.aboutUser %></p>
         </div>
       </div>
     </div>
