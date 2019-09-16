@@ -49,7 +49,6 @@
   font-size: 20px;
 }
 
-
 /* users/show ================================ */
 .users-show-info {
   display: flex;
@@ -139,6 +138,13 @@
   color: #afb6bf;
 }
 
+.posts-index-item-head {
+  display: flex;
+
+  .post-user-name {
+    line-height: 80px;
+  }
+}
 
 /* users/new ================================ */
 .users-form input {
@@ -165,7 +171,7 @@
     span {
       // line-height: 35px;
       margin: 0 20px;
-      line-height: 35px;
+      line-height: 40px;
     }
   }
 }

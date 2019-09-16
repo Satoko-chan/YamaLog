@@ -38,15 +38,17 @@
     <% @likes.each do |like|%>
     <% post=Post.find_by(id: like.post_id)%>
     <div class="posts-index-item">
-      <div class="post-left">
-        <img src="<%= "/user_images/#{post.user.image_name}" %>">
-      </div>
-      <div class="post-right">
-        <div class="post-user-name">
-          <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+      <div class="posts-index-item-head">
+        <div class="post-left">
+          <img src="<%= "/user_images/#{post.user.image_name}" %>">
         </div>
-        <%= link_to(post.comment, "/posts/#{post.id}") %>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+        </div>
       </div>
+      <%= link_to(post.comment, "/posts/#{post.id}") %>
     </div>
     <%end%>
 
