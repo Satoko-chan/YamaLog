@@ -45,12 +45,14 @@
     <ul class="user-tabs">
       <li class="active">
         <%= link_to("/users/#{@user.id}") do%>
-        Post<i class="fas fa-pencil-alt"></i>
+        Post
+        <i class="fas fa-pencil-alt"></i>
         <%end%>
       </li>
       <li>
         <%= link_to("/users/#{@user.id}/likes") do%>
-        Like<i class="fas fa-heart"></i>
+        Like
+        <i class="fas fa-heart"></i>
         <%end%>
       </li>
     </ul>
