@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>EntameLog</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<head>
+  <title>YamaLog</title>
+  <%= csrf_meta_tags %>
 
-    <script src="https://kit.fontawesome.com/9a3706d72e.js"></script>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
+  <script src="https://kit.fontawesome.com/9a3706d72e.js"></script>
+</head>
+
+<body>
 
 
-    <header>
-         <div class="header-logo">
-           <% if @current_user %>
-             <%= link_to("EntameLog", "/posts/index") %>
-           <% else %>
-             <%= link_to("EntameLog", "/") %>
-           <% end %>
-         </div>
-         <ul class="header-menus">
-           <% if  @current_user%>
-             <li>
-               <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-             </li>
-             <li>
-               <%= link_to("All posts", "/posts/index") %>
-             </li>
-             <li>
-               <%= link_to("Friends", "/users/index") %>
-             </li>
-             <li>
-               <%= link_to("New post", "/posts/new") %>
-             </li>
-             <li>
-               <%= link_to("Sign out", "/logout", {method: :post}) %>
-             </li>
-           <% else %>
-             <li>
-               <%= link_to("What's EntameLog?", "/about") %>
-             </li>
-             <li>
-               <%= link_to("Sign in", "/signup") %>
-             </li>
-             <li>
-               <%= link_to("Log in", "/login") %>
-             </li>
-           <% end %>
-         </ul>
-       </header>
+  <header>
+    <div class="header-logo">
+      <% if @current_user %>
+      <%= link_to("YamaLog", "/posts/index") %>
+      <% else %>
+      <%= link_to("YamaLog", "/") %>
+      <% end %>
+    </div>
+    <ul class="header-menus">
+      <% if  @current_user%>
+      <li>
+        <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+      </li>
+      <li>
+        <%= link_to("All posts", "/posts/index") %>
+      </li>
+      <li>
+        <%= link_to("Friends", "/users/index") %>
+      </li>
+      <li>
+        <%= link_to("New post", "/posts/new") %>
+      </li>
+      <li>
+        <%= link_to("Sign out", "/logout", {method: :post}) %>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to("About YamaLog", "/about") %>
+      </li>
+      <li>
+        <%= link_to("Sign in", "/signup") %>
+      </li>
+      <li>
+        <%= link_to("Log in", "/login") %>
+      </li>
+      <% end %>
+    </ul>
+  </header>
 
-       <% if flash[:notice] %>
-         <div class="flash">
-           <%= flash[:notice] %>
-         </div>
-       <% end %>
+  <% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
 
-    <%= yield %>
-  </body>
+  <%= yield %>
+</body>
+
 </html>
