@@ -10,7 +10,7 @@
         <%=link_to(@user.name,"/users/#{@user.id}")%>
       </div>
       <div class="post-title">
-          <%=@post.title%>
+        <%=@post.title%>
       </div>
 
       <div class="posts-show-img">
@@ -19,12 +19,12 @@
 
       <!-- <div class="top right"> -->
       <div class="posts-show-index">
-        <div class="content">
+        <!-- <div class="content">
           <p>ジャンル：コメディ</p>
         </div>
         <div class="content">
           <p>総合評価：☆☆☆</p>
-        </div>
+        </div> -->
         <div class="content">
           <%=@post.updated_at.strftime('%Y/%m/%d')%>
         </div>
@@ -43,19 +43,19 @@
 
     <%if @post.user_id== @current_user.id%>
     <div class="post-menus">
-        <%=link_to("編集","/posts/#{@post.id}/edit")%>
-        <%= link_to("削除", "/posts/#{@post.id}/destroy", {method:"post"}) %>
+      <%=link_to("編集","/posts/#{@post.id}/edit")%>
+      <%= link_to("削除", "/posts/#{@post.id}/destroy", {method:"post"}) %>
     </div>
     <%end%>
 
     <%if Like.find_by(user_id:@current_user.id, post_id:@post.id)%>
-      <%= link_to("/likes/#{@post.id}/destroy", {method: "post"})do %>
-      <span class="fa fa-heart like-btn-unlike"></span>
-      <%end%>
+    <%= link_to("/likes/#{@post.id}/destroy", {method: "post"})do %>
+    <span class="fa fa-heart like-btn-unlike"></span>
+    <%end%>
     <%else%>
-      <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do%>
-      <span class="fa fa-heart like-btn"></span>
-      <%end%>
+    <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do%>
+    <span class="fa fa-heart like-btn"></span>
+    <%end%>
     <%end%>
     <%= @likes_count%>
 
