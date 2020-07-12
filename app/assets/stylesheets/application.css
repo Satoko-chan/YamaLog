@@ -73,11 +73,11 @@
  }
 
  .main {
-   position: absolute;
-   top: 64px;
+   /* position: absolute; */
+   /* top: 64px; */
    width: 100%;
-   height: auto;
-   min-height: 100%;
+   /* height: auto; */
+   /* min-height: 100%; */
    background-color: #f5f8fa;
  }
 
@@ -100,7 +100,7 @@
 
  header {
   height: 64px;
-  background-color: #ebcc46;
+  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   z-index: 1;
   width: 100%;
