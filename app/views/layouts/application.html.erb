@@ -2,6 +2,9 @@
 <html>
 
 <head>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <title>YamaLog</title>
   <%= csrf_meta_tags %>
 
@@ -12,45 +15,45 @@
 </head>
 
 <body>
-
-
   <header>
-    <div class="header-logo">
-      <% if @current_user %>
-      <%= link_to("YamaLog", "/posts/index") %>
-      <% else %>
-      <%= link_to("YamaLog", "/") %>
-      <% end %>
-    </div>
-    <ul class="header-menus">
-      <% if  @current_user%>
-      <li>
-        <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-      </li>
-      <li>
-        <%= link_to("All posts", "/posts/index") %>
-      </li>
-      <li>
-        <%= link_to("Friends", "/users/index") %>
-      </li>
-      <li>
-        <%= link_to("New post", "/posts/new") %>
-      </li>
-      <li>
-        <%= link_to("Sign out", "/logout", {method: :post}) %>
-      </li>
-      <% else %>
-      <li>
-        <%= link_to("About YamaLog", "/about") %>
-      </li>
-      <li>
-        <%= link_to("Sign in", "/signup") %>
-      </li>
-      <li>
-        <%= link_to("Log in", "/login") %>
-      </li>
-      <% end %>
-    </ul>
+    <nav class="navbar navbar-light fixed-top">
+      <div class="header-logo navbar-brand">
+        <% if @current_user %>
+        <%= link_to("YamaLog", "/posts/index") %>
+        <% else %>
+        <%= link_to("YamaLog", "/") %>
+        <% end %>
+      </div>
+      <ul class="header-menus nav-item">
+        <% if  @current_user%>
+        <li>
+          <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+        </li>
+        <li>
+          <%= link_to("All posts", "/posts/index") %>
+        </li>
+        <li>
+          <%= link_to("Friends", "/users/index") %>
+        </li>
+        <li>
+          <%= link_to("New post", "/posts/new") %>
+        </li>
+        <li>
+          <%= link_to("Sign out", "/logout", {method: :post}) %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to("About", "/about") %>
+        </li>
+        <li>
+          <%= link_to("Sign in", "/signup") %>
+        </li>
+        <li>
+          <%= link_to("Log in", "/login") %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
   </header>
 
   <% if flash[:notice] %>

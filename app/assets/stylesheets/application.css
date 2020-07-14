@@ -99,58 +99,55 @@
  /* ヘッダー ================================ */
 
  header {
-  height: 64px;
+  /* height: 64px; */
   background-color: rgba(0, 0, 0, 0);
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-
+  /* position: absolute; */
+  /* z-index: 1; */
+  /* width: 100%; */
 }
 
 .header-logo {
-  float: left;
+  /* float: left; */
   padding-left: 20px;
-  color: white;
+  /* color: white; */
   font-size: larger;
   line-height: 64px;
 }
 
 .header-logo a{
-  color: white;
+  /* color: white; */
   font-size: 22px;
 }
 
 .header-menus {
-  float: right;
+  /* float: right; */
   padding-right: 20px;
 }
 
 .header-menus li {
   float: left;
  line-height: 64px;
-  color: white;
+  /* color: white; */
   padding-left: 50px;
 }
 
 .header-menus a {
   float: left;
-
-  color: white;
+  /* color: white; */
 }
 
 .header-menus .fa {
   padding-right: 5px;
 }
 
-.input[type="submit"] {
+/* .input[type="submit"] {
   padding: 0 20px;
   float: left;
   line-height: 64px;
   color: white;
   margin: 0;
   font-size: 13px;
-
-}
+} */
 
 
 /* フォーム================================ */
