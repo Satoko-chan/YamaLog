@@ -21,9 +21,9 @@
     <nav class="navbar navbar-light fixed-top">
       <div class="header-logo navbar-brand">
         <% if @current_user %>
-        <%= link_to("YamaLog", "/posts/index") %>
+        <div class="linkImg"><%= link_to image_tag('/cite_image/logo.png'),"/posts/index" %></div>
         <% else %>
-        <%= link_to("YamaLog", "/") %>
+        <div class="linkImg"><%= link_to image_tag('/cite_image/logo.png'), "/" %></div>
         <% end %>
       </div>
       <ul class="header-menus nav-item">
@@ -44,9 +44,9 @@
           <%= link_to("Sign out", "/logout", {method: :post}) %>
         </li>
         <% else %>
-        <li>
+        <!-- <li>
           <%= link_to("About", "/about") %>
-        </li>
+        </li> -->
         <li>
           <%= link_to("Sign in", "/signup") %>
         </li>

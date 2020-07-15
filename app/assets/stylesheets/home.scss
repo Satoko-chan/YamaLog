@@ -9,7 +9,8 @@
   width: 100%;
   height: 200vh;
   max-height: 200vh;
-  color: #ff1616;
+  // color: #ff1616;
+  color: #000;
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: cover;
@@ -27,13 +28,19 @@
       -ms-transform: translate(-50%, -50%);
       font-family: 'Josefin Sans', sans-serif;
 
+      img {
+        width: 20vh;
+        margin-bottom: 3vh;
+      }
+
       h1 {
         font-size: 7vh;
         letter-spacing: 1vh;
+        margin-bottom: 2vh;
       }
 
       h2 {
-      font-size: 3vh;
+      font-size: 2.5vh;
       font-weight: lighter;
      }
   
