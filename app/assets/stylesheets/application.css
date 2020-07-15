@@ -109,13 +109,12 @@
 .header-logo {
   /* float: left; */
   padding-left: 20px;
-  /* color: white; */
   font-size: larger;
   line-height: 64px;
 }
 
 .header-logo a{
-  /* color: white; */
+  color: #ff1616;
   font-size: 22px;
 }
 
@@ -127,13 +126,13 @@
 .header-menus li {
   float: left;
  line-height: 64px;
-  /* color: white; */
   padding-left: 50px;
 }
 
 .header-menus a {
   float: left;
-  /* color: white; */
+  color: #ff1616;
+  text-decoration: none;
 }
 
 .header-menus .fa {
