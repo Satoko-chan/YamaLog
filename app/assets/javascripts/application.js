@@ -24,9 +24,13 @@ $(document).on('turbolinks:load', function () {
         let navItem = $('.nav-item a');
 
         $(window).scroll(function () {
-            if ($(this).scrollTop() >= 100) {
-                topMessage.css({ 'color': "#ff1616" })
+            if ($(this).scrollTop() >= 80 && 120 >= $(this).scrollTop()) {
+                topMessage.css({ 'color': "#ff5757" })
                 navItem.css({ 'color': "#ff5757" })
+            } else if ($(this).scrollTop() > 120) {
+                topMessage.css({ 'color': "#ff1616" })
+                navItem.css({ 'color': "#ff1616" })
+
             } else {
                 topMessage.css({ 'color': "#000" })
                 navItem.css({ 'color': "#000" })

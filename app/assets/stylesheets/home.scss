@@ -25,7 +25,7 @@
       transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
-      font-family: 'Josefin Sans', sans-serif;
+      
 
       img {
         width: 20vh;
@@ -51,7 +51,7 @@
 .home_about_container {
   position: relative;
   background-color: #a1d6e2;
-  height: 150vh;
+  height: 80vh;
 
   .cloudImg1 {
     position: absolute;
@@ -69,6 +69,13 @@
   .about-text {
     padding-top: 30%;
     text-align: center;
+
+    hr {     
+      width: 10%;
+      text-align: center;
+      margin: 0 auto;    
+      padding: 20px;
+    }
   }
 }
 
