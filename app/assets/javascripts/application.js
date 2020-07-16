@@ -10,6 +10,30 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
+//= require jquery.turbolinks
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require_self 
+
+$(document).on('turbolinks:load', function () {
+    $(function () {
+        let topMessage = $('.top-message');
+        let navItem = $('.nav-item a');
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 100) {
+                topMessage.css({ 'color': "#ff1616" })
+                navItem.css({ 'color': "#ff5757" })
+            } else {
+                topMessage.css({ 'color': "#000" })
+                navItem.css({ 'color': "#000" })
+            }
+        })
+
+    })
+})
+
+
