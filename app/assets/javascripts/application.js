@@ -19,25 +19,35 @@
 //= require_self 
 
 $(document).on('turbolinks:load', function () {
-    $(function () {
+
+    $(window).scroll(function () {
         let topMessage = $('.top-message');
         let navItem = $('.nav-item a');
+        if ($(this).scrollTop() >= 80 && 150 >= $(this).scrollTop()) {
+            topMessage.css({ 'color': "#ff5757" })
+            navItem.css({ 'color': "#ff5757" })
+        } else if ($(this).scrollTop() > 150) {
+            topMessage.css({ 'color': "#ff1616" })
+            navItem.css({ 'color': "#ff1616" })
 
-        $(window).scroll(function () {
-            if ($(this).scrollTop() >= 80 && 120 >= $(this).scrollTop()) {
-                topMessage.css({ 'color': "#ff5757" })
-                navItem.css({ 'color': "#ff5757" })
-            } else if ($(this).scrollTop() > 120) {
-                topMessage.css({ 'color': "#ff1616" })
-                navItem.css({ 'color': "#ff1616" })
+        } else {
+            topMessage.css({ 'color': "#000" })
+            navItem.css({ 'color': "#000" })
+        }
+    });
 
-            } else {
-                topMessage.css({ 'color': "#000" })
-                navItem.css({ 'color': "#000" })
-            }
-        })
+    $(window).scroll(function () {
+        let homeAboutBg = $('.home_about_container');
+        if ($(this).scrollTop() >= 1200 && 1800 >= $(this).scrollTop()) {
+            homeAboutBg.css({ 'background-color': "#a1d6e2" })
+        } else if ($(this).scrollTop() > 1800) {
+            homeAboutBg.css({ 'background-color': "#e4d5d3" })
+        } else {
+            homeAboutBg.css({ 'background-color': "#fce1d3" })
+        }
+    });
 
-    })
-})
+
+});
 
 

@@ -50,13 +50,12 @@
 
 .home_about_container {
   position: relative;
-  background-color: #a1d6e2;
-  height: 80vh;
+  transition: background-color 2s;
 
   .cloudImg1 {
     position: absolute;
     z-index: 999;
-    top: -40vh;
+    top: -20vh;
     width: 100%;
   }
 
@@ -70,11 +69,15 @@
     padding-top: 30%;
     text-align: center;
 
-    hr {     
-      width: 10%;
-      text-align: center;
-      margin: 0 auto;    
-      padding: 20px;
+    .abouts {
+      padding: 40%;
+
+      hr {     
+        width: 10%;
+        text-align: center;
+        margin: 0 auto;    
+        padding: 20px;
+      }
     }
   }
 }
