@@ -79,11 +79,8 @@ img{
  }
 
  .container {
-   max-width: 65%;
-   margin: 30px auto;
-   padding-left: 15px;
-   padding-right: 15px;
-   clear: both;
+   max-width: 80%;
+   margin: 10% auto;
  }
 
  .btn{
@@ -93,7 +90,7 @@ img{
    color: white;
  }
 
- /* ヘッダー ================================ */
+ /* navbar ================================ */
 
  header {
   /* height: 64px; */
@@ -101,23 +98,6 @@ img{
   /* position: absolute; */
   /* z-index: 1; */
   /* width: 100%; */
-}
-
-.header-logo {
-  /* float: left; */
-  padding-left: 20px;
-  font-size: larger;
-  line-height: 64px;
-}
-
-.header-logo a{
-  /* color: #ff1616; */
-  font-size: 22px;
-}
-
-.header-menus {
-  /* float: right; */
-  padding-right: 20px;
 }
 
 .header-menus li {
@@ -128,7 +108,7 @@ img{
 
 .header-menus a {
   float: left;
-  /* color: #ff1616; */
+  color: #000;
   text-decoration: none;
 }
 
@@ -149,9 +129,9 @@ img{
   width: 8vh;
 }
 
-/* フォーム================================ */
+/* form================================ */
 .form {
-  max-width: 600px;
+  width: 80%;
   margin: 0 auto;
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
@@ -190,15 +170,13 @@ img{
 }
 
 .form input[type="submit"] {
-  background-color: #3ecdc6;
+  background-color: #ff5757;
   color: white;
   cursor: pointer;
-  font-weight: 300;
-  width: 120px;
-  border-radius: 2px;
-  margin-top: 8px;
-  margin-bottom: 0;
-  float: right;
+  display: block;
+  width: 50%;
+  border-radius: 5px;
+  margin: 0 auto;
 }
 
 .form-body:after {

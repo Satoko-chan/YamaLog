@@ -1,25 +1,25 @@
 <div class="main users_login_from_container">
-
   <div class="main users-new">
-  <%=form_tag("/login")do%>
-  <div class="container">
-    <div class="form-heading">ログイン</div>
-    <div class="form users-form">
-      <% if @error_message %>
-          <div class="form-error">
-            <%= @error_message %>
-          </div>
-      <% end %>
-      <div class="form-body">
-        <p>メールアドレス</p>
-        <input name="email" value="<%=@email%>">
-        <p>パスワード</p>
-        <input type="password" name="password" value="<%=@password%>">
-        <input type="submit" value="ログイン">
-      </div>
-      </div>
-  </div>
-  <%end%>
-  </div>
 
+    <%=form_tag("/login")do%>
+    <div class="container">
+      <h1 class="h3 mb-3 font-weight-normal text-center">Log in</h1>
+      <div class="form users-form">
+        <% if @error_message %>
+        <div class="form-error">
+          <%= @error_message %>
+        </div>
+        <% end %>
+        <div class="form-body">
+          <p>Email</p>
+          <input name="email" value="<%=@email%>">
+          <p>Password</p>
+          <input type="password" name="password" value="<%=@password%>">
+          <input type="submit" value="click">
+        </div>
+      </div>
+    </div>
+    <%end%>
+
+  </div>
 </div>
