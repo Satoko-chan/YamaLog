@@ -55,17 +55,17 @@
             <span class="fa fa-heart like-btn"></span>
             <%end%>
             <%end%>
-          </div>  
+          </div>
           <div class="like-count">
             <%= @likes_count=Like.where(post_id: post.id).count%>
           </div>
         </div>
-          <%if post.user_id== @current_user.id%>
-          <div class="post-menus">
-            <%=link_to("Edit","/posts/#{post.id}/edit")%>
-            <%= link_to("Delete", "/posts/#{post.id}/destroy", {method:"post"}) %>
-          </div>
-          <%end%>       
+        <%if post.user_id== @current_user.id%>
+        <div class="post-menus">
+          <%=link_to("Edit","/posts/#{post.id}/edit")%>
+          <%= link_to("Delete", "/posts/#{post.id}/destroy", {method:"post"}) %>
+        </div>
+        <%end%>
       </div>
 
     </div>

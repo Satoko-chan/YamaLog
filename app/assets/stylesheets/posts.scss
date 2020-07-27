@@ -61,16 +61,13 @@
 /* posts/new ================================ */
 .posts-new-container {
   .posts-new-heading {
-    font-weight: 300;
-    font-size: 48px;
-    // color: #bcc8d4;
-    font-family: "Bradley Hand";
+    font-size: 30px;
+    color: #bcc8d4;
     text-align: center;
   }
   .new-top {
     .posts-new-contents {
       margin: 5% auto;
-      // padding-top: 20px;
       width: 80%;
       // img{
       //   width: 280px;
@@ -82,27 +79,18 @@
       // }
       .content {
         padding-bottom: 30px;
-
         .select-stars option {
           .fa-star {
             color: aqua;
           }
         }
+        .text {
+          margin: 10px;
+        }
       }
     }
   }
 
-  .clear {
-    clear: left;
-  }
-
-  .comment {
-    margin: 10px;
-    textarea {
-      margin: 0 auto;
-      width: 80%;
-    }
-  }
   .create-btn {
     .btn {
       display: block;
@@ -110,7 +98,6 @@
       font-size: 20px;
       padding: 0 25px;
       min-height: 45px;
-      // border: 1px solid rgb(216, 218, 223);
       background-color: #a9a9a9;
       box-shadow: 0 3px rgb(117, 117, 117);
       opacity: 0.8;

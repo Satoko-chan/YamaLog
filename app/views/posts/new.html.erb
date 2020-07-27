@@ -10,7 +10,6 @@
       </div>
       <% end %>
 
-      <!-- <div class="top right"> -->
       <div class="posts-new-contents">
         <div class="content">
           <p>Select image: </p>
@@ -20,46 +19,12 @@
           <p>Title: </p>
           <input type="text" name="title" value="<%=@post.title%>">
         </div>
-        <!-- <div class="content select-genres">
-          <p>Genre: </p>
-          <select name="genre" required>
-            <option value>Select Genre</option>
-            <option value="1">Action</option>
-            <option value="2">Anime</option>
-            <option value="3">Children & Family</option>
-            <option value="4">Classic</option>
-            <option value="5">Comedies</option>
-            <option value="6">Documentaries</option>
-            <option value="7">Essay</option>
-            <option value="8">Histories</option>
-            <option value="9">Misteries</option>
-            <option value="10">Romance</option>
-            <option value="11">Sci-Fi & Fantasy</option>
-            <option value="12">Thrillers</option>
-            <option value="13">Others</option>
-          </select>
-        </div> -->
-        <!-- <div class="content select-stars">
-          <p>Stars: </p>
-          <select name="star" required>
-            <option value>Select Star</option>
-            <option value="1">★</option>
-            <option value="2">★★</option>
-            <option value="3">★★★</option>
-            <option value="4">★★★★</option>
-            <option value="5">★★★★★</option>
-          </select>
-        </div> -->
+
       </div>
     </div>
 
-    <!-- <div class="clear"> -->
-    <!-- </div> -->
-
-    <div class="valuation_item">
-    </div>
     <div class="comment" style="text-align: center;">
-      <p>Comment</p>
+      <p>Text:</p>
       <textarea name="comment" rows="8" cols="80"><%=@post.comment%></textarea>
     </div>
     <div class="create-btn">
