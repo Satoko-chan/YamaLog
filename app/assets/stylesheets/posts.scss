@@ -4,57 +4,100 @@
 
 /* posts/index ================================ */
 
-.posts-index-item-top {
-  display: flex;
-}
+// .posts-index-item-top {
+//   display: flex;
+// }
 
-.posts-index-item {
-  padding: 20px 30px;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
+// .posts-index-item {
+//   padding: 20px 30px;
+//   background-color: white;
+//   overflow: hidden;
+//   box-shadow: 0 2px 6px #c1ced7;
 
-  .post-left img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+  
+// }
+
+// .post-right {
+//   .user_name {
+//     font-size: 18px;
+//   }
+  
+//   .created_at {
+//     i {
+//       // float: left;
+//       line-height: 25px;
+//       margin-right: 10px;
+//     //   padding-right: 10px;
+//     }
+//   }
+  
+// }
+
+// .posts-index-item-content {
+//   .post_comment {
+//     width: 85%;
+//   }
+
+//   .like_and_star {
+//     display: flex;
+//     justify-content: flex-end;
+//     margin-left: auto;
+//     text-align: right;
+//     .like-count {
+//       margin-left: 5px;
+//     }
+//   }
+// }
+
+.posts_index_container {
+  .row {
     box-shadow: 0 2px 6px #c1ced7;
-    margin: 10px;
-    object-fit: cover;
-    // float: left;
-  }
-}
-
-.post-right {
-  .user_name {
-    font-size: 18px;
+    height: 38vh;
+    background-color: #fff;
+    position: relative;
+    a {
+      text-decoration: none;
+    }
+    .col-5 img {
+      height: 38vh;
+    }
+  
+    .col-6 {
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0 2px 6px #c1ced7;
+        margin: 10px;
+        object-fit: cover;
+      }
+      .user-img-name-created {
+        display: flex;
+        justify-content:flex-end;
+        line-height: 70px;
+        h3, p{
+          line-height: 70px;
+        }
+      }
+      .like-menus {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+      .like {
+        display: flex;
+        justify-content:space-around;
+      }
+      .post-menus {
+        display: flex;
+        justify-content:space-around;
+        a {
+          text-decoration: underline;
+        }
+      }   
+    } 
   }
   
-  .created_at {
-    i {
-      // float: left;
-      line-height: 25px;
-      margin-right: 10px;
-    //   padding-right: 10px;
-    }
-  }
-  
-}
-
-.posts-index-item-content {
-  .post_comment {
-    width: 85%;
-  }
-
-  .like_and_star {
-    display: flex;
-    justify-content: flex-end;
-    margin-left: auto;
-    text-align: right;
-    .like-count {
-      margin-left: 5px;
-    }
-  }
 }
 
 
