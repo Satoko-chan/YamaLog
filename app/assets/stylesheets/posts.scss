@@ -52,54 +52,56 @@
 .posts_index_container {
   .row {
     box-shadow: 0 2px 6px #c1ced7;
-    height: 38vh;
     background-color: #fff;
-    position: relative;
     a {
       text-decoration: none;
+      color: #545454;
     }
-    .col-5 img {
+    a:hover {
+      color: #c1ced7;
+    }
+    .work-img img {
       height: 38vh;
+      width: 100%;
     }
   
-    .col-6 {
+    .post-content {   
       img {
-        width: 60px;
-        height: 60px;
+        width: 8vh;
+        height: 8vh;
         border-radius: 50%;
         box-shadow: 0 2px 6px #c1ced7;
-        margin: 10px;
+        margin: 2vh;
         object-fit: cover;
       }
       .user-img-name-created {
         display: flex;
-        justify-content:flex-end;
-        line-height: 70px;
+        line-height: 12vh;
         h3, p{
-          line-height: 70px;
+          line-height: 12vh;
         }
       }
-      .like-menus {
-        position: absolute;
-        bottom: 0;
-        right: 0;
+      .posts_title_comment {
+        .post_comment {
+          height: 10vh;
+          overflow: auto;
+          color: #8a8881;
+        }
       }
       .like {
         display: flex;
-        justify-content:space-around;
+        justify-content: flex-end;
       }
       .post-menus {
         display: flex;
-        justify-content:space-around;
+        justify-content:flex-end;
         a {
           text-decoration: underline;
         }
       }   
     } 
-  }
-  
+  } 
 }
-
 
 /* posts/new ================================ */
 .posts-new-container {

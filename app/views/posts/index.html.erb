@@ -1,18 +1,18 @@
-<div class="main posts_index_container">
+<div class="posts_index_container">
 
   <div class="container">
 
     <% @posts.each do |post| %>
     <div class="row mb-4">
-      <!-- <div class="posts-index-item-top"> -->
-      <div class="work-img col-5">
+
+      <div class="work-img col-md-5">
         <%if post.user_id.present?%>
         <img src="<%= "/work_images/#{post.image_name}" %>">
         <%end%>
       </div>
-      <div class="col-1"></div>
-      <div class="col-6">
-        <!-- <div class="post-right"> -->
+
+      <div class="post-content col-md-7">
+
         <div class="user-img-name-created m-2">
           <div class="user-img mr-3">
             <%if post.user_id.present?%>
@@ -25,16 +25,13 @@
             <%end%>
           </div>
           <div class="created_at">
-            <!-- <i class="far fa-clock"></i> -->
+
             <p>
               <%= post.created_at.strftime('%Y/%m/%d') %>
             </p>
           </div>
         </div>
-        <!-- </div> -->
-        <!-- </div> -->
 
-        <!-- <div class="posts-index-item-content"> -->
         <div class="posts_title_comment">
           <li class="post_title">
             <h2>
@@ -69,7 +66,7 @@
           </div>
         </div>
         <%end%>
-        <!-- </div> -->
+
       </div>
     </div>
     <% end %>
