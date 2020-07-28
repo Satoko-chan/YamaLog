@@ -1,17 +1,18 @@
 <div class="main users_index_container">
   <div class="container">
 
-    <h1>Friends</h1>
-    <% @users.each do |user|%>
-    <div class="users-index-item">
-      <div class="user-left">
+    <div class="row 4 row-cols-1 row-cols-sm-2 row-cols-lg-4 m-3">
+      <% @users.each do |user|%>
+      <div class="card mb-3 card-img-top">
         <img src="<%= "/user_images/#{user.image_name}" %>">
+        <div class="card-body">
+          <h3 class="card-title"><%= link_to(user.name, "/users/#{user.id}")%></h3>
+          <p class="card-text">Favorite hike spot: <br>❤ <%= user.user_like %></p>
+          <p class="card-text">Comment: <br><%= user.aboutUser %></p>
+        </div>
       </div>
-      <div class="user-right">
-        <%= link_to(user.name, "/users/#{user.id}")%>
-      </div>
+      <% end%>
     </div>
-    <% end%>
 
   </div>
 </div>

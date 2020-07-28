@@ -3,50 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* users/index ================================ */
+
 .users_index_container {
-  h1 {
-    font-weight: 300;
-    font-size: 48px;
-    // color: #bcc8d4;
-    font-family: "Bradley Hand";
-    text-align: center;
-    margin: 3% 0;
-  }
-}
-
-.users-index-item {
-  padding: 3% 10%;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
-  display: table;
-  width: 100%;
-
-  .user-left img {
-    width: 80px;
-    height: 80px;
-    border-radius: 20%;
+  .card { 
     box-shadow: 0 2px 6px #c1ced7;
-    margin: 20px 0 10px;
-    object-fit: cover;
+    height: 65vh;
+    img {
+      height: 35vh;
+    }
+    .card-body {
+      overflow: auto;
+      h3 {
+        a {
+          color: #545454;
+          text-decoration: none;
+        }
+        a:hover {
+          color: #c1ced7;
+        }
+      }
+    }
   }
-}
-
-.user-name a {
-  font-weight: 600;
-}
-
-.user-name a:hover {
-  color: #3ecdc6;
-}
-
-.user-right {
-  width: 60%;
-  right: 0;
-  text-align: left;
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 20px;
 }
 
 /* users/show ================================ */
