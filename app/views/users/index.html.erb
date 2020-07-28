@@ -1,14 +1,20 @@
 <div class="main users_index_container">
   <div class="container">
 
-    <div class="row 4 row-cols-1 row-cols-sm-2 row-cols-lg-4 m-3">
+    <div class="row 4 row-cols-1 row-cols-sm-2 row-cols-lg-3 m-3">
       <% @users.each do |user|%>
-      <div class="card mb-3 card-img-top">
-        <img src="<%= "/user_images/#{user.image_name}" %>">
-        <div class="card-body">
-          <h3 class="card-title"><%= link_to(user.name, "/users/#{user.id}")%></h3>
-          <p class="card-text">Favorite hike spot: <br>❤ <%= user.user_like %></p>
-          <p class="card-text">Comment: <br><%= user.aboutUser %></p>
+      <div class="col mb-4">
+        <div class="card card-img-top">
+          <!-- <div class="card-img-top">
+             link_to("/users/#{user.id}") do -->
+          <img src="<%= "/user_images/#{user.image_name}" %>">
+          <!--  end
+          </div> -->
+          <div class="card-body">
+            <h3 class="card-title"><%= link_to(user.name, "/users/#{user.id}")%></h3>
+            <p class="card-text">Favorite hike spot: <br>❤ <%= user.user_like %></p>
+            <p class="card-text">Comment: <br><%= user.aboutUser %></p>
+          </div>
         </div>
       </div>
       <% end%>
