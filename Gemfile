@@ -58,5 +58,5 @@ gem "nokogiri", ">= 1.10.4"
 gem "rubyzip", ">= 1.3.0"
 gem "jquery-rails"
 gem 'jquery-turbolinks'
-gem 'bootstrap-sass', '3.3.6'
+gem 'bootstrap-sass', '3.4.1'
 gem 'bootstrap-toggle-rails'
