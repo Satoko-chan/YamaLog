@@ -7,9 +7,9 @@
       <div class="form-body">
 
         <% @user.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%= message %>
-          </div>
+        <div class="form-error">
+          <%= message %>
+        </div>
         <% end %>
 
         <p>User Name:</p>
@@ -18,14 +18,14 @@
         <input type="file" name="image">
         <p>Email:</p>
         <input name="email" value="<%=@user.email%>">
-        <p>What you like:</p>
+        <p>Favorite hiking spot:</p>
         <li class="user-like-input">
-            <span class="fa fa-heart"></span>
-            <input name="user_like" value="<%= @user.user_like %>" placeholder="ex) Love Movies, Classic, Woody Allen">
+          <span class="fa fa-heart"></span>
+          <input name="user_like" value="<%= @user.user_like %>">
         </li>
         <p>About you:</p>
-        <textarea name="aboutUser" value="<%= @user.aboutUser %>" placeholder="Let's introduce your self"></textarea>
-        
+        <textarea name="aboutUser" value="<%= @user.aboutUser %>" placeholder="Let's introduce your self!"></textarea>
+
         <input type="submit" value="Edit">
 
       </div>

@@ -5,11 +5,7 @@
       <% @users.each do |user|%>
       <div class="col mb-4">
         <div class="card card-img-top">
-          <!-- <div class="card-img-top">
-             link_to("/users/#{user.id}") do -->
           <img src="<%= "/user_images/#{user.image_name}" %>">
-          <!--  end
-          </div> -->
           <div class="card-body">
             <h3 class="card-title"><%= link_to(user.name, "/users/#{user.id}")%></h3>
             <p class="card-text">Favorite hike spot: <br>❤ <%= user.user_like %></p>

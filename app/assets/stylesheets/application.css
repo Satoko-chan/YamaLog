@@ -55,6 +55,12 @@ h3 {
   /* letter-spacing: 0.05em; */
 }
 
+h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  /* font-size: 3.5vh; */
+  /* letter-spacing: 0.05em; */
+}
+
 p {
   font-family: 'Josefin Sans', sans-serif;
   /* font-size: 2.5vh; */
@@ -80,7 +86,7 @@ img{
 
  .container {
    max-width: 80%;
-   margin: 10% auto;
+   margin: 5% auto;
  }
 
  .btn{
@@ -187,9 +193,9 @@ img{
 
 /* フラッシュ ================================ */
 .flash {
-  padding: 10px 0;
+  padding: 20px 0;
   color: white;
-  background: rgb(251, 170, 88);
+  background: rgb(249, 231, 32);
   text-align: center;
   position: absolute;
   top: 64px;

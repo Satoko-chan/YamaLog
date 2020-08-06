@@ -27,102 +27,119 @@
 }
 
 /* users/show ================================ */
-.users-show-info {
-  display: flex;
-  justify-content: space-evenly;
+.users-info {
+background-color: #ff5757;
+color: #fff;
+max-width: 100%;
+padding: 5% 10% 0 10%;
+
+  .users-show-info {
+    .user {
+      
+      img {
+        width: 250px;
+        height: 250px; 
+        margin: 5% auto;
+        box-shadow: 0 2px 6px #c1ced7;
+        object-fit: cover;
+        text-align: center;
+      }
+      a {
+        color: #8899a6;
+        text-decoration: underline;
+        font-weight: 200;
+      }
+    }
+    .about,
+    .likes {
+      margin-top: 20px;
+      p {
+        margin-top: 10px;
+      }
+    }
+  } 
+
+  .user-tabs {
+    overflow: hidden;
+    li {
+      float: left;
+    }
+    li.active {
+      border-bottom: 2px solid #fff;
+    }
+    li.active a {
+      color: #fff;
+      text-decoration: none;
+    }
+    a {
+      display: inline-block;
+      padding: 16px 30px;
+      color: #afb6bf;
+      text-decoration: none;
+    }
+  }
 }
 
-.user {
-  margin-bottom: 20px;
-  width: 50%;
-  float: left;
-
-  img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.user-show-posts{
+  .row {
     box-shadow: 0 2px 6px #c1ced7;
-    margin: 8px 0 10px;
-    object-fit: cover;
-  }
+    background-color: #fff;
+    a {
+      text-decoration: none;
+      color: #545454;
+    }
+    a:hover {
+      color: #c1ced7;
+    }
+    .work-img img {
+      height: 38vh;
+      width: 100%;
+    }
 
-  h2 {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.5;
-    margin: 20px 0;
-  }
-
-  p {
-    font-size: 13px;
-    margin-bottom: 15px;
-  }
-
-  a {
-    color: #8899a6;
-    text-decoration: underline;
-    font-weight: 200;
-  }
-
-  span {
-    color: #afb6bf;
-    font-weight: 200;
-    padding: 0 6px 0 8px;
-  }
+    .post-content {   
+      img {
+        width: 8vh;
+        height: 8vh;
+        border-radius: 50%;
+        box-shadow: 0 2px 6px #c1ced7;
+        margin: 2vh;
+        object-fit: cover;
+      }
+      .user-img-name-created {
+        display: flex;
+        line-height: 12vh;
+        h3, p{
+          line-height: 12vh;
+        }
+      }
+      .posts_title_comment {
+        .post_comment {
+          height: 10vh;
+          overflow: auto;
+          color: #8a8881;
+        }
+      }
+      .like {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .post-menus {
+        display: flex;
+        justify-content:flex-end;
+        a {
+          text-decoration: underline;
+        }
+      }   
+    } 
+  } 
 }
 
-.left {
-  text-align: center;
-}
-
-.right {
-  margin: 20px auto;
-}
-
-// .clear {
-//   clear: left;
+// .posts-index-item-head {
+//   display: flex;
+//   .post-user-name {
+//     line-height: 80px;
+//   }
 // }
-
-.about,
-.likes {
-  margin-top: 20px;
-  p {
-    margin-top: 10px;
-  }
-}
-
-.user-tabs {
-  margin-top: 40px;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
-}
-
-.user-tabs li {
-  float: left;
-}
-
-.user-tabs li.active {
-  border-bottom: 2px solid #3ecdc6;
-}
-
-.user-tabs li.active a {
-  color: #57575f;
-}
-
-.user-tabs a {
-  display: inline-block;
-  padding: 16px 30px;
-  color: #afb6bf;
-}
-
-.posts-index-item-head {
-  display: flex;
-
-  .post-user-name {
-    line-height: 80px;
-  }
-}
 
 /* users/new ================================ */
 .users-form input {
@@ -136,10 +153,7 @@
 
 .users_edit_container {
   h1 {
-    font-weight: 300;
-    font-size: 48px;
     color: #bcc8d4;
-    font-family: "Bradley Hand";
     text-align: center;
   }
 

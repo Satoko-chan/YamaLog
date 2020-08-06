@@ -1,18 +1,13 @@
 <div class="main users_show_container">
-  <div class="container">
 
-    <div class="users-show-info">
-      <div class="user left">
+  <div class="users-info">
+    <div class="users-show-info row">
+      <div class="user col-12 col-md-4">
         <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <%if @current_user.id==@user.id%>
-        <div class="user-menus">
-          <%=link_to("Edit","/users/#{@user.id}/edit")%>
-        </div>
-        <%end%>
       </div>
 
-      <div class="user right">
-        <h2><%= @user.name%></h2>
+      <div class="user col-12 col-md-8">
+        <h1><%= @user.name%></h1>
         <div class="likes">
           <h4>Favorite hike spot:</h4>
           <p><%= @user.user_like %></p>
@@ -21,6 +16,11 @@
           <h4>Comment:</h4>
           <p><%= @user.aboutUser %></p>
         </div>
+        <%if @current_user.id==@user.id%>
+        <div class="user-menus">
+          <%=link_to("Edit","/users/#{@user.id}/edit")%>
+        </div>
+        <%end%>
       </div>
     </div>
 
@@ -28,30 +28,79 @@
       <li class="active">
         <%= link_to("/users/#{@user.id}") do%>
         Post
-        <i class="fas fa-pencil-alt"></i>
+
         <%end%>
       </li>
       <li>
         <%= link_to("/users/#{@user.id}/likes") do%>
         Like
-        <i class="fas fa-heart"></i>
+
         <%end%>
       </li>
     </ul>
+  </div>
 
+  <div class="container user-show-posts">
     <% @user.posts.each do |post|%>
-    <div class="posts-index-item">
-      <div class="posts-index-item-head">
-        <div class="post-left">
-          <img src="<%= "/user_images/#{post.user.image_name}" %>">
-        </div>
-        <div class="post-right">
-          <div class="post-user-name">
-            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+    <div class="row mb-4">
+      <div class="work-img col-md-5">
+        <%if post.user_id.present?%>
+        <img src="<%= "/work_images/#{post.image_name}" %>">
+        <%end%>
+      </div>
+      <div class="post-content col-md-7">
+        <div class="user-img-name-created m-2">
+          <div class="user-img mr-3">
+            <%if post.user_id.present?%>
+            <img src="<%="/user_images/#{post.user.image_name}"%>">
+            <%end%>
+          </div>
+          <div class="user_name mr-4">
+            <%if post.user_id.present?%>
+            <h3><%= link_to(post.user.name, "/users/#{post.user.id}")%></h3>
+            <%end%>
+          </div>
+          <div class="created_at">
+            <p>
+              <%= post.created_at.strftime('%Y/%m/%d') %>
+            </p>
           </div>
         </div>
+        <div class="posts_title_comment">
+          <li class="post_title">
+            <h2>
+              <%= link_to(post.title, "/posts/#{post.id}") %>
+            </h2>
+          </li>
+          <li class="post_comment">
+            <%= post.comment %>
+          </li>
+        </div>
+        <div class="like-menus">
+          <div class="like">
+            <div class="like-icon mr-2">
+              <%if Like.find_by(user_id: @current_user.id, post_id: post.id)%>
+              <%= link_to("/likes/#{post.id}/destroy", {method: "post"})do %>
+              <span class="fa fa-heart like-btn-unlike"></span>
+              <%end%>
+              <%else%>
+              <%= link_to("/likes/#{post.id}/create", {method: "post"}) do%>
+              <span class="fa fa-heart like-btn"></span>
+              <%end%>
+              <%end%>
+            </div>
+            <div class="like-count">
+              <%= @likes_count=Like.where(post_id: post.id).count%>
+            </div>
+          </div>
+          <%if post.user_id== @current_user.id%>
+          <div class="post-menus">
+            <%= link_to("Edit","/posts/#{post.id}/edit")%><br>
+            <%= link_to("Delete", "/posts/#{post.id}/destroy", {method:"post"}) %>
+          </div>
+        </div>
+        <%end%>
       </div>
-      <%= link_to(post.comment, "/posts/#{post.id}") %>
     </div>
     <%end%>
 

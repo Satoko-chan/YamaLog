@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     )
     if @user.save
       session[:user_id]=@user.id
-      flash[:notice]="新規会員登録が完了しました"
+      flash[:notice]="Signed in!"
       redirect_to("/users/#{@user.id}")
     else
       render("users/new")
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     end
 
     if @user.save
-      flash[:notice]="ユーザー情報を変更しました"
+      flash[:notice]="Successfully changed your user information."
       redirect_to("/users/#{@user.id}")
     else
       render("users/new")
@@ -65,10 +65,10 @@ class UsersController < ApplicationController
     @user=User.find_by(email:params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id]=@user.id
-      flash[:notice]="ログインしました"
+      flash[:notice]="Logged in!"
       redirect_to("/posts/index")
     else
-      @error_message="メールアドレスまたはパスワードが間違っています"
+      @error_message="Your email address or password is wrong."
       @email= params[:email]
       @password= params[:password]
       render("users/login_form")
@@ -78,14 +78,14 @@ class UsersController < ApplicationController
 
   def logout
     session[:user_id]=nil
-    flash[:notice]="ログアウトしました"
+    flash[:notice]="Logged out"
     redirect_to("/login")
   end
 
   def likes
     @user=User.find_by(id: params[:id])
     @likes=Like.where(user_id: @user.id)
-
+    @likes=Like.all.order(created_at: :desc)
   end
 
 end

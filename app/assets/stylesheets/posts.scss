@@ -4,51 +4,6 @@
 
 /* posts/index ================================ */
 
-// .posts-index-item-top {
-//   display: flex;
-// }
-
-// .posts-index-item {
-//   padding: 20px 30px;
-//   background-color: white;
-//   overflow: hidden;
-//   box-shadow: 0 2px 6px #c1ced7;
-
-  
-// }
-
-// .post-right {
-//   .user_name {
-//     font-size: 18px;
-//   }
-  
-//   .created_at {
-//     i {
-//       // float: left;
-//       line-height: 25px;
-//       margin-right: 10px;
-//     //   padding-right: 10px;
-//     }
-//   }
-  
-// }
-
-// .posts-index-item-content {
-//   .post_comment {
-//     width: 85%;
-//   }
-
-//   .like_and_star {
-//     display: flex;
-//     justify-content: flex-end;
-//     margin-left: auto;
-//     text-align: right;
-//     .like-count {
-//       margin-left: 5px;
-//     }
-//   }
-// }
-
 .posts_index_container {
   .row {
     box-shadow: 0 2px 6px #c1ced7;
@@ -114,14 +69,6 @@
     .posts-new-contents {
       margin: 5% auto;
       width: 80%;
-      // img{
-      //   width: 280px;
-      //   height: 100%;
-      //   border-radius: 5%;
-      //   box-shadow: 0 2px 6px #c1ced7;
-      //   object-fit: cover;
-      //   margin-right: 35px;
-      // }
       .content {
         padding-bottom: 30px;
         .select-stars option {
@@ -222,16 +169,22 @@
 /* posts/edit ================================ */
 .posts-edit-container {
   h1 {
-    font-weight: 300;
-    font-size: 48px;
-    // color: #bcc8d4;
-    font-family: "Bradley Hand";
+    color: #bcc8d4;
     text-align: center;
   }
 
   .container {
     width: 60%;
     text-align: left;
+  }
+
+  p {
+    padding-right: 5px;
+  }
+
+  .content {
+    display: flex;
+    margin-bottom: 5%;
   }
 
   .create-btn {
