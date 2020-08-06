@@ -41,8 +41,14 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (8.0.0)
+    autoprefixer-rails (9.8.6.1)
+      execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
+    bootstrap-toggle-rails (2.2.1.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.33.0)
@@ -182,6 +188,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  bootstrap-sass (= 3.3.6)
+  bootstrap-toggle-rails
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 4.2)

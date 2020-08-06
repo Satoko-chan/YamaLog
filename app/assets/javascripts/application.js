@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require_tree .
 //= require_self 
+//= require bootstrap
 
 $(document).on('turbolinks:load', function () {
 
@@ -25,17 +26,17 @@ $(document).on('turbolinks:load', function () {
         let navItem = $('.topNav a');
         if ($(this).scrollTop() >= 80 && 150 >= $(this).scrollTop()) {
             topMessage.css({ 'color': "#ff5757" })
-            navItem.css({ 'color': "#ff5757" })
+            // navItem.css({ 'color': "#ff5757" })
         } else if ($(this).scrollTop() > 150 && 1200 > $(this).scrollTop()) {
             topMessage.css({ 'color': "#ff1616" })
-            navItem.css({ 'color': "#ff1616" })
+            // navItem.css({ 'color': "#ff1616" })
 
         } else if ($(this).scrollTop() >= 1200) {
             topMessage.css({ 'color': "#000" })
-            navItem.css({ 'color': "#000" })
+            // navItem.css({ 'color': "#000" })
         } else {
             topMessage.css({ 'color': "#000" })
-            navItem.css({ 'color': "#000" })
+            // navItem.css({ 'color': "#000" })
         }
     });
 

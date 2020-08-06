@@ -27,23 +27,31 @@
         <div class="linkImg"><%= link_to image_tag('/cite_image/logo.png'), "/" %></div>
         <% end %>
       </div>
-      <ul class="header-menus">
+      <div class="header-menus">
         <% if  @current_user%>
-        <li>
-          <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-        </li>
-        <li>
-          <%= link_to("All posts", "/posts/index") %>
-        </li>
-        <li>
-          <%= link_to("Friends", "/users/index") %>
-        </li>
-        <li>
-          <%= link_to("New post", "/posts/new") %>
-        </li>
-        <li>
-          <%= link_to("Sign out", "/logout", {method: :post}) %>
-        </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="global-nav__item">
+              <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+            </li>
+            <li class="global-nav__item">
+              <%= link_to("All posts", "/posts/index") %>
+            </li>
+            <li class="global-nav__item">
+              <%= link_to("Friends", "/users/index") %>
+            </li>
+            <li class="global-nav__item">
+              <%= link_to("New post", "/posts/new") %>
+            </li>
+            <li class="global-nav__item">
+              <%= link_to("Sign out", "/logout", {method: :post}) %>
+            </li>
+          </ul>
+        </div>
         <% else %>
         <ul class="topNav">
           <!-- <li>
@@ -57,7 +65,7 @@
           </li>
         </ul>
         <% end %>
-      </ul>
+      </div>
     </nav>
   </header>
 
