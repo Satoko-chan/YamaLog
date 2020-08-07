@@ -21,8 +21,8 @@ class UsersController < ApplicationController
       email: params[:email],
       password: params[:password],
       image_name: "user_default.png",
-      user_like: "What I'm interested",
-      aboutUser: "Hello, nice to meet you!"
+      user_like: "null",
+      aboutUser: "null"
     )
     if @user.save
       session[:user_id]=@user.id

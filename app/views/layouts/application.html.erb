@@ -12,7 +12,6 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <script src="https://kit.fontawesome.com/9a3706d72e.js"></script>
 </head>
@@ -29,11 +28,12 @@
       </div>
       <div class="header-menus">
         <% if  @current_user%>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        </button> -->
+        <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
+        <div id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="global-nav__item">
               <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
