@@ -1,34 +1,47 @@
-<div class="main home_top_container">
+<header id="home_top_container">
 
   <div class="container">
 
     <div class="top-main">
       <div class="top-message">
-        <img src="/cite_image/topLogo.png" alt="topLogo" />
+        <p>WELCOME TO</p>
         <h1>YAMALOG</h1>
-        <p>Let's log your trekking.</p>
+        <p>HAVE FUN!</p>
+        <div class="arrow bounce">
+          <a class="fa fa-arrow-down fa-4x" href="#home_about_container"></a>
+        </div>
+      </div>
+      <div class="designUrl">
+        <a href="http://www.freepik.com">Designed by upklyak / Freepik</a>
       </div>
     </div>
 
   </div>
 
-</div>
+</header>
 
-<div class="main home_about_container">
+<div id="home_about_container">
 
-  <img src="/cite_image/cloudImg.png" alt="cloudImg1" class="cloudImg1" />
-  <img src="/cite_image/cloudImg2.png" alt="cloudImg2" class="cloudImg2" />
   <div class="about-text">
     <div class="abouts">
-      <h2>What you can do</h2>
+      <h2>What is YAMALOG?</h2>
       <hr>
-      <p>1. Post a new trekking log.</p>
-    </div>
-    <div class="abouts">
-      <p>2. Like others log.</p>
-    </div>
-    <div class="abouts">
-      <p>3. Make new hiking friends!</p>
+      <p>Are you a mountain lover? Are you searching for an application that you can post your trekking diary and make
+        hiking buddies? </p>
+      <p>This is an ideal app for you! </p>
+      <p>You can create your own account, post and share some trekking diaries with beautiful picture that you took,
+        'like' other friends posts. </p>
+      <p>All your personal information are protected and your posted datas will be saved on SQLite database. </p>
+      <h4>Let’s give it a try!</h4>
+      <h4>👇</h4>
+      <div class="loginSignin">
+        <%= link_to("/signup") do %>
+        <h1>LOG IN</h1>
+        <% end %>
+        <%= link_to("/login") do %>
+        <h1>SIGN IN</h1>
+        <% end %>
+      </div>
     </div>
   </div>
 

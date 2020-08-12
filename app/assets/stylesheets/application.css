@@ -38,7 +38,7 @@ body {
 }
 
 h1 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Spartan', sans-serif;
   /* font-size: 20vh; */
   /* font-weight: lighter; */
 }
@@ -137,6 +137,14 @@ img{
   top: 5px;
 }
 
+.navbar-nav {
+  display: flex;
+}
+
+.topNav a { 
+    color: #fff; 
+}
+
 /* form================================ */
 .form {
   width: 80%;
@@ -195,12 +203,12 @@ img{
 
 /* フラッシュ ================================ */
 .flash {
-  padding: 40px 0;
+  padding: 30px 0;
   color: white;
   background: rgb(249, 231, 32);
   text-align: center;
   position: absolute;
-  top: 10%;
+  top: 64px;
   z-index: 10;
   width: 100%;
   border-radius: 0 0 2px 2px;

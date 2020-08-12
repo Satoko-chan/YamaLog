@@ -41,15 +41,24 @@ $(document).on('turbolinks:load', function () {
     });
 
     $(window).scroll(function () {
-        let homeAboutBg = $('.home_about_container');
-        if ($(this).scrollTop() >= 1200 && 1800 >= $(this).scrollTop()) {
+        let homeAboutBg = $('.gradationBg');
+        if ($(this).scrollTop() >= 0 && 500 >= $(this).scrollTop()) {
             homeAboutBg.css({ 'background-color': "#a1d6e2" })
-        } else if ($(this).scrollTop() > 1800) {
+        } else if ($(this).scrollTop() > 500) {
             homeAboutBg.css({ 'background-color': "#e4d5d3" })
         } else {
             homeAboutBg.css({ 'background-color': "#fce1d3" })
         }
     });
+
+    // window.addEventListener('scroll', () => {
+    //     //idがkeyvisualの要素を取得
+    //     let elem = document.getElementById('home_top_container');
+    //     //現在のスクロール位置を取得して、10で除算
+    //     let scrollY = window.scrollY / 10;
+    //     //上で取得した値と画像幅を加算して、elemの背景サイズに設定
+    //     elem.style.backgroundSize = 100 + scrollY + '%';
+    // });
 
 
 });
