@@ -83,6 +83,14 @@
     }
   }
 
+  .comment {
+    textarea{
+      width: 100%;
+      height: 200px;
+    }
+  }
+  
+
   .create-btn {
     .btn {
       display: block;
@@ -178,6 +186,13 @@
     text-align: left;
   }
 
+  .comment {
+    textarea{
+      width: 100%;
+      height: 200px;
+    }
+  }
+  
   p {
     padding-right: 5px;
   }
