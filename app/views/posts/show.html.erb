@@ -7,10 +7,10 @@
       <div class="post-user-name">
         <img src="<%= "/user_images/#{@user.image_name}" %>">
 
-        <%=link_to(@user.name,"/users/#{@user.id}")%>
+        <h3><%=link_to(@user.name,"/users/#{@user.id}")%></h3>
       </div>
       <div class="post-title">
-        <%=@post.title%>
+        <h2><%=@post.title%></h2>
       </div>
 
       <!-- <div class="posts-show-img">
@@ -19,7 +19,7 @@
 
       <div class="posts-show-index">
         <div class="content">
-          <%=@post.updated_at.strftime('%Y/%m/%d')%>
+          <p><%=@post.updated_at.strftime('%Y/%m/%d')%></p>
         </div>
       </div>
 

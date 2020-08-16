@@ -34,40 +34,40 @@
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
-        <div>
-          <ul class="navbar-nav">
-            <li class="global-nav__item">
-              <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-            </li>
-            <li class="global-nav__item">
-              <%= link_to("All posts", "/posts/index") %>
-            </li>
-            <li class="global-nav__item">
-              <%= link_to("Friends", "/users/index") %>
-            </li>
-            <li class="global-nav__item">
-              <%= link_to("New post", "/posts/new") %>
-            </li>
-            <li class="global-nav__item">
-              <%= link_to("Sign out", "/logout", {method: :post}) %>
-            </li>
-          </ul>
-        </div>
-        <% else %>
-        <ul class="topNav">
-          <!-- <li>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div>
+            <ul class="navbar-nav">
+              <li class="global-nav__item">
+                <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+              </li>
+              <li class="global-nav__item">
+                <%= link_to("All posts", "/posts/index") %>
+              </li>
+              <li class="global-nav__item">
+                <%= link_to("Friends", "/users/index") %>
+              </li>
+              <li class="global-nav__item">
+                <%= link_to("New post", "/posts/new") %>
+              </li>
+              <li class="global-nav__item">
+                <%= link_to("Sign out", "/logout", {method: :post}) %>
+              </li>
+            </ul>
+          </div>
+          <% else %>
+          <ul class="topNav">
+            <!-- <li>
           <%= link_to("About", "/about") %>
           </li> -->
-          <li>
-            <%= link_to("Sign in", "/signup") %>
-          </li>
-          <li>
-            <%= link_to("Log in", "/login") %>
-          </li>
-        </ul>
-        <% end %>
-      </div>
+            <li>
+              <%= link_to("Sign in", "/signup") %>
+            </li>
+            <li>
+              <%= link_to("Log in", "/login") %>
+            </li>
+          </ul>
+          <% end %>
+        </div>
     </nav>
   </header>
 
