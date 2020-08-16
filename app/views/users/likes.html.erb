@@ -41,13 +41,14 @@
   <div class="container user-show-posts">
     <% @likes.each do |like|%>
     <% post=Post.find_by(id: like.post_id)%>
-    <div class="row mb-4">
-      <div class="work-img col-md-5">
+    <div class="row">
+      <!-- <div class="work-img col-md-5">
         <%if post.user_id.present?%>
         <img src="<%= "/work_images/#{post.image_name}" %>">
         <%end%>
-      </div>
-      <div class="post-content col-md-7">
+      </div> -->
+      <!-- <div class="post-content col-md-7"> -->
+      <div class="post-content">
         <div class="user-img-name-created m-2">
           <div class="user-img mr-3">
             <%if post.user_id.present?%>

@@ -28,7 +28,7 @@ class PostsController < ApplicationController
       @post.image_name="#{@post.id}.jpg"
       File.binwrite("public/work_images/#{@post.image_name}", image.read)
     else
-      @post.image_name="work_default.jpg"
+      @post.image_name="work_default.png"
     end
 
     if @post.save

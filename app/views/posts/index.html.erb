@@ -3,15 +3,16 @@
   <div class="container">
 
     <% @posts.each do |post| %>
-    <div class="row mb-4">
+    <div class="row">
 
-      <div class="work-img col-md-5">
+      <!-- <div class="work-img col-md-6">
         <%if post.user_id.present?%>
         <img src="<%= "/work_images/#{post.image_name}" %>">
         <%end%>
-      </div>
+      </div> -->
 
-      <div class="post-content col-md-7">
+      <!-- <div class="post-content col-md-6"> -->
+      <div class="post-content">
 
         <div class="user-img-name-created m-2">
           <div class="user-img mr-3">
