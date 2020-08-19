@@ -39,33 +39,22 @@ body {
 
 h1 {
   font-family: 'Spartan', sans-serif;
-  /* font-size: 20vh; */
-  /* font-weight: lighter; */
 }
 
 h2 {
   font-family: 'Josefin Sans', sans-serif;
-  /* font-size: 8vh; */
-  /* font-weight: lighter; */
 }
 
 h3 {
   font-family: 'Josefin Sans', sans-serif;
-  /* font-size: 3.5vh; */
-  /* letter-spacing: 0.05em; */
 }
 
 h4 {
   font-family: 'Josefin Sans', sans-serif;
-  /* font-size: 3.5vh; */
-  /* letter-spacing: 0.05em; */
 }
 
 p {
   font-family: 'Josefin Sans', sans-serif;
-  /* font-size: 2.5vh; */
-  /* font-weight: bold; */
-  /* letter-spacing: 0.05em; */
 }
 
 img{
@@ -74,15 +63,6 @@ img{
   padding: 0;
   vertical-align: bottom;
 }
-
-.main {
-   /* position: absolute; */
-   /* top: 64px; */
-   /* width: 100%; */
-   /* height: auto; */
-   /* min-height: 100%; */
-   /* background-color: #f5f8fa; */
- }
 
  .container {
    max-width: 95%;
@@ -104,12 +84,145 @@ img{
 
  /* navbar ================================ */
 
+/*============
+nav
+=============*/
+nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  bottom: 0;
+  width: 300px;
+  background: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: all .5s;
+  z-index: 3;
+  opacity: 0;
+}
+.open nav {
+  right: 0;
+  opacity: 1;
+}
+nav .inner {
+  padding: 25px;
+}
+nav .inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav .inner ul li {
+  position: relative;
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+nav .inner ul li a {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  padding: 1em;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+nav .inner ul li a:hover {
+  background: #e4e4e4;
+}
+@media screen and (max-width: 767px) {
+  nav {
+    right: -220px;
+    width: 220px;
+  }
+}
+/*============
+.toggle_btn
+=============*/
+.toggle_btn {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  transition: all .5s;
+  cursor: pointer;
+  z-index: 3;
+}
+.toggle_btn span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all .5s;
+}
+.toggle_btn span:nth-child(1) {
+  top: 4px;
+}
+.toggle_btn span:nth-child(2) {
+  top: 14px;
+}
+.toggle_btn span:nth-child(3) {
+  bottom: 4px;
+}
+.open .toggle_btn span {
+  background-color: #333;
+}
+.open .toggle_btn span:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+.open .toggle_btn span:nth-child(2) {
+  opacity: 0;
+}
+.open .toggle_btn span:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(315deg);
+  transform: translateY(-10px) rotate(315deg);
+}
+/*============
+#mask
+=============*/
+#mask {
+  display: none;
+  transition: all .5s;
+}
+.open #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .8;
+  z-index: 2;
+  cursor: pointer;
+}
+/*============
+main
+=============*/
+main {
+  padding: 50px;
+}
+main h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+/*============
+body
+=============*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
  header {
-  /* height: 64px; */
   background-color: rgba(0, 0, 0, 0);
-  /* position: absolute; */
-  /* z-index: 1; */
-  /* width: 100%; */
 }
 
 .header-menus li {
@@ -143,8 +256,8 @@ img{
   top: 5px;
 }
 
-.navbar-nav {
-  display: flex;
+.navbar-nav a{
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .topNav a { 
@@ -183,8 +296,6 @@ img{
 }
 
 .form input {
-  
-  /* @media only screen and (min-width: 1140px) { */
   width: 100%;
   border: 1px solid #d8dadf;
   padding: 10px;
@@ -192,7 +303,6 @@ img{
   font-size: 16px;
   letter-spacing: 2px;
   border-radius: 2px;
-  /* } */
 }
 
 .form textarea {
@@ -218,7 +328,7 @@ img{
   clear: both;
 }
 
-/* フラッシュ ================================ */
+/* flash ================================ */
 .flash {
   padding: 30px 0;
   color: white;

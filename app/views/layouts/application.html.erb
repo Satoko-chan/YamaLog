@@ -20,7 +20,7 @@
 <body>
   <header>
     <!-- <nav class="navbar navbar-light fixed-top"> -->
-    <nav class="navbar navbar-light fixed-top">
+    <div class="navbar navbar-light fixed-top">
       <div class="navbar-brand">
         <% if @current_user %>
         <div class="linkImg"><%= link_to image_tag('/cite_image/logo.png'),"/posts/index" %></div>
@@ -30,45 +30,56 @@
       </div>
       <div class="header-menus">
         <% if  @current_user%>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <div>
-            <ul class="navbar-nav">
-              <li class="global-nav__item">
-                <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-              </li>
-              <li class="global-nav__item">
-                <%= link_to("All posts", "/posts/index") %>
-              </li>
-              <li class="global-nav__item">
-                <%= link_to("Friends", "/users/index") %>
-              </li>
-              <li class="global-nav__item">
-                <%= link_to("New post", "/posts/new") %>
-              </li>
-              <li class="global-nav__item">
-                <%= link_to("Sign out", "/logout", {method: :post}) %>
-              </li>
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
+        <div id="navArea">
+          <nav>
+            <div class="inner">
+              <ul class="navbar-nav">
+                <li class="global-nav__item">
+                  <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+                </li>
+                <li class="global-nav__item">
+                  <%= link_to("All posts", "/posts/index") %>
+                </li>
+                <li class="global-nav__item">
+                  <%= link_to("Friends", "/users/index") %>
+                </li>
+                <li class="global-nav__item">
+                  <%= link_to("New post", "/posts/new") %>
+                </li>
+                <li class="global-nav__item">
+                  <%= link_to("Sign out", "/logout", {method: :post}) %>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="toggle_btn">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-          <% else %>
-          <ul class="topNav">
-            <!-- <li>
+
+          <div id="mask"></div>
+        </div>
+        <% else %>
+        <ul class="topNav">
+          <!-- <li>
           <%= link_to("About", "/about") %>
           </li> -->
-            <li>
-              <%= link_to("Sign in", "/signup") %>
-            </li>
-            <li>
-              <%= link_to("Log in", "/login") %>
-            </li>
-          </ul>
-          <% end %>
-        </div>
-    </nav>
+          <li>
+            <%= link_to("Sign in", "/signup") %>
+          </li>
+          <li>
+            <%= link_to("Log in", "/login") %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
+    </div>
   </header>
 
   <% if flash[:notice] %>
